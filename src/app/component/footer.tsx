@@ -1,60 +1,68 @@
 import React from 'react';
-import { FaDiscord, FaTwitter, FaGithub } from 'react-icons/fa';
+import Image from 'next/image';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Import icons
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Product Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Product</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-400">Vaults</a></li>
-              <li><a href="#" className="hover:text-gray-400">Docs</a></li>
-              <li><a href="#" className="hover:text-gray-400">Risk Disclosure</a></li>
-            </ul>
+    <footer className="bg-black text-white py-12"> {/* Increased padding to make footer taller */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 -mb-5">
+        <div className="flex justify-between items-start border-b-2 border-gray-500 pb-8 mt-8 -mb-29"> {/* Updated border to gray */}
+          {/* Logo Section */}
+          <div className="flex-shrink-0">
+            <Image
+              src="/Logo.svg" 
+              alt="Logo"
+              width={120} 
+              height={40} 
+              className="object-contain"
+            />
           </div>
 
-          {/* Community Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Community</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-400">Discord</a></li>
-              <li><a href="#" className="hover:text-gray-400">Twitter</a></li>
-              <li><a href="#" className="hover:text-gray-400">GitHub</a></li>
-            </ul>
-          </div>
-
-          {/* Legal Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
-            <ul>
-              <li><a href="#" className="hover:text-gray-400">Terms</a></li>
-              <li><a href="#" className="hover:text-gray-400">Privacy</a></li>
-            </ul>
-          </div>
-
-          {/* Connect Section */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FaDiscord className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FaTwitter className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FaGithub className="h-6 w-6" />
-              </a>
+          {/* Navigation Sections */}
+          <div className="flex space-x-12">
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold">Products</h4>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li><a href="#" className="hover:text-gray-400">Vaults</a></li>
+                <li><a href="#" className="hover:text-gray-400">Docs</a></li>
+                <li><a href="#" className="hover:text-gray-400">Risk Disclosure</a></li>
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold">Community</h4>
+              <ul className="space-y-2 text-gray-500 text-sm">
+                <li><a href="#" className="hover:text-gray-400">Discord</a></li>
+                <li><a href="#" className="hover:text-gray-400">Twitter</a></li>
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold">Legal</h4>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li><a href="#" className="hover:text-gray-400">Terms</a></li>
+                <li><a href="#" className="hover:text-gray-400">Privacy</a></li>
+              </ul>
+            </div>
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold">Connect</h4>
+              <div className="flex space-x-6 text-xl">
+                {/* Social media icons */}
+                <a href="#" className="text-white hover:text-gray-400">
+                  <FaFacebook />
+                </a>
+                <a href="#" className="text-white hover:text-gray-400">
+                  <FaInstagram />
+                </a>
+                <a href="#" className="text-white hover:text-gray-400">
+                  <FaLinkedin />
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 text-center text-sm text-gray-400">
-          <p>© 2025 DeFiYield. All rights reserved.</p>
+        {/* Footer Bottom Text */}
+        <div className="text-center text-sm mt-30 text-gray-500"> {/* Adjusted color for the copyright text */}
+          <p>© 2025 yielDrift. All rights reserved.</p>
         </div>
       </div>
     </footer>

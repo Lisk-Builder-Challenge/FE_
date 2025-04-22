@@ -3,38 +3,39 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <header className="bg-black shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Image
-              src="/logoAtas.png" // Ganti dengan path logo Anda
+              src="/Logo.svg" 
               alt="Logo"
-              width={100}
-              height={100}
-              className="h-8 w-32"
+              width={120} 
+              height={40} 
+              className="object-contain"
             />
           </div>
 
           {/* Navigation Section */}
-          <div className="ml-auto flex space-x-4">
-            <a href="#" className="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+          <div className="ml-auto flex items-center space-x-6">
+            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Why Us
             </a>
-            <a href="#" className="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Our Feature
             </a>
-            <a href="#" className="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Vault
             </a>
-            <a href="#" className="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               How It Works
             </a>
-            <a href="#" className="text-gray-800 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Docs
             </a>
-            <button className="bg-black text-white px-4 py-2 rounded-md">
+            {/* Launch App Button */}
+            <button className="bg-gray-950 text-white border-1 border-white px-6 py-2 rounded-xl text-sm font-medium hover:bg-gray-800">
               Launch App
             </button>
           </div>
