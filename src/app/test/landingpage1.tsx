@@ -1,47 +1,44 @@
-import React from 'react'
+import React from "react";
+import { Button } from "@/app/animasi/button";
+import Image from 'next/image';
 
-const Landing = () => {
+const HeroSection = () => {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-white px-4">
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Text Section */}
-        <div>
-          <h1 className="text-5xl md:text-5xl text-[#000000] mb-0">
-            Decentralized Yield-<br />
-            Bearing Stablecoins,<br />
-            Powered by Strategy<br />
-            Auctions
-          </h1>
-          <p className="text-gray-600 mb-8">
-            Earn yield on USDC, IDRX, or EUROC through < br/>
-            permissionless, competitive manager strategies.
-          </p>
-          <div className="flex gap-4">
-            <button className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-900 transition">
-              Launch App
-            </button>
-            <button className="border border-black px-6 py-2 rounded-md hover:bg-gray-100 text-[#000000] transition">
-              Explore Vaults
-            </button>
-          </div>
-        </div>
-
-        {/* Placeholder Section */}
-        <div className="bg-gray-200 h-[300px] md:h-[350px] rounded-xl flex items-center justify-center">
-          <svg
-            className="w-12 h-12 text-gray-500"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
+    <section className="min-h-screen flex items-center justify-between bg-black text-white px-70 py-10 relative overflow-hidden">
+      <div className="max-w-3xl z-10">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-10">
+          Decentralized Yield-Bearing <br />
+          Stablecoins Powered by <br />
+          Strategy Auctions
+        </h1>
+        <p className="text-gray-400 text-lg mb-10">
+          Earn yield on USDC, IDRX, or EUROC through <br />
+          permissionless, competitive manager strategies.
+        </p>
+        <div className="flex gap-4">
+          <Button
+            variant="default"
+            className="px-6 py-3 text-md bg-gradient-to-t from-gray-800 to-black text-white border border-gray hover:from-gray-500 hover:to-gray-800"
           >
-            <path d="M3 17l6-6 4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+            LAUNCH APP
+          </Button>
+          <Button
+            variant="outline"
+            className="px-6 py-3 text-md border-white text-white to-gray-800 hover:from-gray-700"
+          >
+            EXPLORE VAULT
+          </Button>
         </div>
       </div>
-    </main>
-    
-  )
-}
+      <div className="absolute right-50 bottom-30 z-0">
+        <img 
+          src= "/Globe Asset.svg" 
+          alt="globe" 
+          className="w-[300px] md:w-[800px] h-auto opacity-70 object-contain translate-x-10 translate-y-10"
+        />
+      </div>
+    </section>
+  );
+};
 
-export default Landing
+export default HeroSection;
