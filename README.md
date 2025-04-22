@@ -38,5 +38,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 
 INSTAL TAMBAHAN JIKA ADA EROR DI IMPORT
-1. npm install react-icons
-2. npm install lucide-react
+1. npm install class-variance-authority
+2. npm install react-icons
+3. npm install lucide-react
