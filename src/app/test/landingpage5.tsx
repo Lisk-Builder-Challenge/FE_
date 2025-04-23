@@ -25,7 +25,7 @@ export default function Vaults() {
     <div className="min-h-screen bg-black text-white flex flex-col items-center py-16 px-4">
       <h1 className="text-5xl font-bold mb-16 text-center">Active Vaults</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl drop-shadow-[0_0_5px_rgba(255,255,255,0.93)]">
         {vaults.map((vault) => (
           <Card
             key={vault.name}
@@ -40,7 +40,7 @@ export default function Vaults() {
                   objectFit="cover"
                   className="rounded-lg opacity-60"
                 />
-                <div className="absolute inset-0 flex items-center justify-between px-4 text-sm text-gray-300">
+                <div className="absolute inset-0 flex items-center justify-between px-4 text-sm drop-shadow-[0_0_5px_rgba(255,255,255,0.93)]">
                   <span>PAYMENT</span>
                 </div>
               </div>
