@@ -41,3 +41,6 @@ INSTAL TAMBAHAN JIKA ADA EROR DI IMPORT
 1. npm install class-variance-authority
 2. npm install react-icons
 3. npm install lucide-react
+4. pip install pillow
+5. npx shadcn-ui@latest add button
+6. npm install framer-motion
