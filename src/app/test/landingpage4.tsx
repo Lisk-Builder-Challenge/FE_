@@ -1,0 +1,56 @@
+import React from "react";
+
+const steps = [
+  {
+    id: 1,
+    title: "Deposit Stablecoin",
+    description: "Choose your preferred stablecoin vault"
+  },
+  {
+    id: 2,
+    title: "Operators Submit Strategies",
+    description: "Competitive yield strategies are proposed"
+  },
+  {
+    id: 3,
+    title: "Restakers Underwrite",
+    description: "Selected strategies are secured by ETH"
+  },
+  {
+    id: 4,
+    title: "Funds Allocated",
+    description: "Vault allocates user funds based on the selected strategy"
+  },
+  {
+    id: 5,
+    title: "Yield Accrual & Rebalancing",
+    description: "Yield is accrued and Capital is rebalanced into the new winning strategy or You can withdraw"
+  }
+];
+
+export default function HowItWorks() {
+  return (
+    <div className="bg-black text-white py-16 px-6">
+      <h2 className="text-center text-3xl font-bold mb-12">How It Works</h2>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-6xl mx-auto">
+        {steps.map((step, index) => (
+          <div
+            key={step.id}
+            className="bg-gray-900 rounded-2xl shadow-lg p-6 flex flex-col items-center text-center max-w-xs"
+          >
+            <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-bold mb-4">
+              {step.id}
+            </div>
+            <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
+            <p className="text-sm text-gray-300">{step.description}</p>
+            {index < steps.length - 1 && (
+              <span className="hidden md:block absolute right-0 transform translate-x-1/2 text-white text-xl">
+                →
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

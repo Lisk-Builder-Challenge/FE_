@@ -12,7 +12,7 @@ const features: Feature[] = [
   {
     title: 'Yield-Bearing Stablecoins',
     description: 'Earn competitive yields on your stablecoin deposits through our automated strategy selection',
-    iconSrc: '/Yield-Bearing Stablecoins.svg', // ganti dengan path gambar kamu
+    iconSrc: '/Yield-Bearing Stabelcoin.svg', 
   },
   {
     title: 'Strategy Auction',
@@ -30,25 +30,25 @@ export default function Features() {
   return (
     <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-16">
       {/* Glowing Title */}
-      <h1 className="text-4xl md:text-5xl font-bold mb-12 text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.35)] text-center">
+      <h1 className="text-4xl md:text-5xl font-bold mb-12 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.93)] text-center">
         Our Feature
       </h1>
 
       {/* Feature Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="relative w-[280px] h-[240px] rounded-[24px] p-6 border border-white/10 shadow-lg backdrop-blur-md overflow-hidden bg-[#0f0f0f]"
+            className="relative w-full max-w-[360px] h-[240px] rounded-[24px] p-6 border border-white/10 shadow-lg backdrop-blur-md overflow-hidden bg-[#0f0f0f] hover:border-black/200 hover:w-[300px] transition-colors duration-75 "
           >
             {/* Inner Fading Effect */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_80%)] pointer-events-none z-0 rounded-[24px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.8)_30%,rgba(255,255,255,0.1)_120%)] pointer-events-none z-20 rounded-[20px] transition-all duration-300" />
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col h-full">
+            <div className="relative z-20 flex flex-col h-full">
               <img src={feature.iconSrc} alt={feature.title} className="w-10 h-10 mb-4" />
-              <h3 className="text-white font-semibold text-lg mb-2">{feature.title}</h3>
-              <p className="text-sm text-white/60">{feature.description}</p>
+              <h3 className="text-white font-semibold text-xl mb-4">{feature.title}</h3>
+              <p className="text-sm text-gray hover:text-blue leading-relaxed">{feature.description}</p>
             </div>
           </div>
         ))}
