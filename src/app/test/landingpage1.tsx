@@ -34,7 +34,7 @@ const HeroSection = () => {
         <img 
           src= "/Globe Asset.svg" 
           alt="globe" 
-          className="w-[300px] md:w-[575px] h-auto opacity-70 object-contain translate-x-40 translate-y-20"
+          className="w-[300px] md:w-[575px] h-auto opacity-70 object-contain translate-x-50 translate-y-20"
         />
       </div>
     </section>
