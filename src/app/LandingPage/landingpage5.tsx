@@ -2,7 +2,6 @@ import React from "react";
 import { Card, CardContent } from "@/app/animasi/cardLanding4";
 import { Button } from "@/app/animasi/buttonLanding4";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const vaults = [
@@ -23,7 +22,7 @@ const vaults = [
 export default function Vaults() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center py-16 px-4">
-      <h1 className="text-5xl font-bold mb-16 text-center">Active Vaults</h1>
+      <h1 className="text-4xl md:text-5xl mb-12 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.93)] text-center duration-50">Active Vaults</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 w-full max-w-6xl drop-shadow-[0_0_5px_rgba(255,255,255,0.93)]">
         {vaults.map((vault) => (
@@ -54,7 +53,7 @@ export default function Vaults() {
       </div>
 
       <div className="text-center mt-24">
-        <h2 className="text-2xl font-semibold mb-6">Supported Assets & Integrations</h2>
+        <h2 className="text-4xl md:text-5xl mb-12 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.93)] text-center duration-50">Supported Assets & Integrations</h2>
         <div className="flex flex-wrap justify-center gap-4">
           {[...Array(12)].map((_, i) => (
             <div
