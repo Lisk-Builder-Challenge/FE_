@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/app/animasi/button";
-import Image from 'next/image';
+
 
 const HeroSection = () => {
   return (

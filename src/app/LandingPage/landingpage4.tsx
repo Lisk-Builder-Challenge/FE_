@@ -38,11 +38,11 @@ const steps: Step[] = [
 const HowItWorks: React.FC = () => {
   return (
     <div className="bg-black text-white py-16 px-4">
-      <h2 className="text-4xl md:text-5xl mb-12 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.93)] text-center duration-50">
+      <h2 className="text-4xl md:text-5xl mb-12 text-center drop-shadow-[0_0_5px_rgba(255,255,255,0.93)]">
         How It Works
       </h2>
-      <div className="flex justify-center items-center gap-12 max-w-7xl mx-auto">
-        <div className="flex justify-between items-center w-full bg-gray-900 p-8 rounded-2xl shadow-lg">
+      <div className="flex justify-center items-center gap-4 max-w-7xl mx-auto">
+        <div className="flex items-center space-x-8">
           {steps.map((step, index) => (
             <div key={step.id} className="flex flex-col items-center text-center space-y-4">
               <div className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center font-bold text-xl mb-4">
@@ -51,7 +51,7 @@ const HowItWorks: React.FC = () => {
               <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
               <p className="text-sm text-gray-300">{step.description}</p>
 
-              {/* Panah antar langkah */}
+              {/* Arrow only visible on larger screens */}
               {index < steps.length - 1 && (
                 <div className="hidden md:block text-2xl text-white">
                   →
