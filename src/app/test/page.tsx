@@ -11,7 +11,7 @@ const page = () => {
       <Landingpage1/>
       <Landingpage2/>
       <Landingpage3/>
-      <Landingpage4/>
+      <Landingpage4/> 
       <Landingpage5/>
     </div>
   )
