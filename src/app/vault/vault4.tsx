@@ -12,6 +12,8 @@ const historyData = [
   },
 ];
 
+
+
 const sharedBoxStyle = {
   backgroundImage: `
     radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 80%),
@@ -63,6 +65,7 @@ export default function ActionHistory() {
           </div>
         </div>
       ))}
+
     </div>
   );
 }

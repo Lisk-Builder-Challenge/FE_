@@ -15,6 +15,16 @@ export default function StrategyAuctionTable() {
     quorum: "Qualified"
   };
 
+  const data2 = {
+    operator: " ",
+    vault: " ",
+    category: " ",
+    apy: " ",
+    valueRestaked: " ",
+    stakers: " ",
+    quorum: " "
+  };
+
   const sharedBoxStyle = {
     backgroundImage: `
       radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 80%),
@@ -55,6 +65,14 @@ export default function StrategyAuctionTable() {
           <div className="py-4 px-4 text-center">{data.valueRestaked}</div>
           <div className="py-4 px-4 text-center">{data.stakers}</div>
           <div className="py-4 px-4 text-center">{data.quorum}</div>
+
+          <div className="py-4 px-4 text-center">{data2.operator}</div>
+          <div className="py-4 px-4 text-center">{data2.vault}</div>
+          <div className="py-4 px-4 text-center">{data2.category}</div>
+          <div className="py-4 px-4 text-center underline">{data2.apy}</div>
+          <div className="py-4 px-4 text-center">{data2.valueRestaked}</div>
+          <div className="py-4 px-4 text-center">{data2.stakers}</div>
+          <div className="py-4 px-4 text-center">{data2.quorum}</div>
         </div>
       </div>
     </div>

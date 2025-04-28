@@ -52,10 +52,10 @@ export default function DepositPanel() {
               </div>
               <div className="flex items-center gap-6">
                 <span className="text-lg font-semibold">{vault.balance}</span>
-                <button className="bg-gray-700 hover:bg-gray-600 border border-white px-4 py-1.5 rounded-md text-sm transition">
+                <button className="bg-transparent hover:bg-gray-600 border border-white px-4 py-1.5 rounded-md text-sm transition">
                   Deposit
                 </button>
-                <button className="bg-gray-700 hover:bg-gray-600 border border-white px-4 py-1.5 rounded-md text-sm transition">
+                <button className="bg-transparent hover:bg-gray-600 border border-white px-4 py-1.5 rounded-md text-sm transition">
                   Withdraw
                 </button>
               </div>
