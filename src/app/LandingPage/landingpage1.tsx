@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { Button } from "@/app/animasi/button";
-import Image from "next/image";
-
+import { useRouter } from "next/navigation"; 
 
 const HeroSection = () => {
+  const router = useRouter();
   return (
     <section className="min-h-screen flex items-center justify-between bg-black text-white px-35 py-10 relative overflow-hidden">
       <div className="max-w-3xl z-10">
@@ -19,12 +20,14 @@ const HeroSection = () => {
         <div className="flex gap-4">
           <Button
             variant="default"
+            onClick={() => router.push("/dashboard")}
             className="px-6 py-3 text-md bg-gradient-to-t from-gray-800 to-black text-white border border-gray hover:from-gray-500 hover:to-gray-800"
           >
             LAUNCH APP
           </Button>
           <Button
             variant="outline"
+            onClick={() => router.push("/vault")}
             className="px-6 py-3 text-md border-white text-white to-gray-800 hover:from-gray-700"
           >
             EXPLORE VAULT
