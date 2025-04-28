@@ -3,8 +3,10 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/app/animasi/button";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black relative overflow-hidden text-white px-6">
       {/* Background Aura */}
@@ -48,12 +50,14 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 mb-20">
           <Button
             variant="default"
+            onClick={() => router.push("/dashboard")}
             className="flex items-center gap-2 px-6 py-3 text-md bg-gradient-to-t from-gray-800 to-black text-white border border-gray-700 hover:from-gray-600 hover:to-gray-800 rounded-md"
           >
             LAUNCH APP <ArrowRight size={16} />
           </Button>
           <Button
             variant="outline"
+            onClick={() => router.push("/vault")}
             className="flex items-center gap-2 px-6 py-3 text-md border-white text-white hover:bg-white hover:text-black rounded-md"
           >
             EXPLORE VAULT <ArrowRight size={16} />
