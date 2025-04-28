@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/app/animasi/button";
+import Image from "next/image";
 
 
 const HeroSection = () => {
@@ -31,7 +32,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="absolute right-50 bottom-30 z-0">
-        <img 
+        <Image
           src= "/Globe Asset.svg" 
           alt="globe" 
           className="w-[300px] md:w-[575px] h-auto opacity-70 object-contain translate-x-50 translate-y-20"

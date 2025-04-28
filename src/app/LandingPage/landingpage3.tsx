@@ -28,7 +28,7 @@ const features: Feature[] = [
 
 export default function Features() {
   return (
-    <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-16">
+    <section className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-16" id="Feat">
       {/* Glowing Title */}
       <h1 className="text-4xl md:text-5xl mb-12 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.93)] text-center duration-50">
         Our Feature
