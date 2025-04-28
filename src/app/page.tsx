@@ -5,10 +5,12 @@ import Landingpage4 from "@/app/LandingPage/landingpage4"
 import Landingpage5 from "@/app/LandingPage/landingpage5"
 import RevisiLP1 from "@/app/LandingPage/revisiLP1"
 import RevisiLP2 from "@/app/LandingPage/revisiLP2"
+import Navbar from "@/app/navbar&footer/header"
 
 export default function Home() {
   return (
     <div className="min-h-screen ">
+      <Navbar/>
       <RevisiLP1/>
       <RevisiLP2/>
       <Landingpage3/>

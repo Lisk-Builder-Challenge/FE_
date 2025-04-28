@@ -1,7 +1,9 @@
 'use client';
 import React from "react";
 import { Inter } from 'next/font/google';
-import Image from "next/image";
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
+
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -75,6 +77,11 @@ export default function VaultCard() {
           </div>
         </div>
       </div>
+
+      
+      
+
+
     </div>
   );
 }
