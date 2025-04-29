@@ -37,10 +37,10 @@ export default function VaultDashboard() {
               <button
                 key={token}
                 onClick={() => setActiveToken(token)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition ${
+                className={`px-4 py-2 rounded-xl text-sm font-medium transition border-1 ${
                   activeToken === token
-                    ? "bg-gray-400 text-black"
-                    : "bg-gray-700 hover:bg-gray-600"
+                    ? "bg-gray-400 text-white z-20"
+                    : "bg-transparent hover:bg-gray-600"
                 }`}
               >
                 {token}

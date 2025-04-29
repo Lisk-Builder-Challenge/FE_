@@ -1,5 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+// import Landingpage2 from "@/app/LandingPage/landingpage2"
+import Link from 'next/link';
+import { Button } from "@/app/animasi/button";
+
 
 const Header = () => {
   return (
@@ -19,25 +23,33 @@ const Header = () => {
 
           {/* Navigation Section */}
           <div className="ml-auto flex items-center space-x-6">
-            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
-              Why Us
-            </a>
-            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+            <Link href="#whyUs" passHref className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+              
+                Why Us
+              
+            </Link>
+            <a href="#Feat" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Our Feature
             </a>
-            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+            <a href="#last" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Vault
             </a>
-            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+            <a href="#how" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               How It Works
             </a>
             <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Docs
             </a>
             {/* Launch App Button */}
-            <button className="bg-gray-950 text-white border-1 border-white px-6 py-2 rounded-xl text-sm font-medium hover:bg-gray-800">
-              Launch App
-            </button>
+            <Link href="/dashboard">
+              <Button
+              variant="default"
+              className="flex items-center gap-2 px-6 py-3 text-md bg-gradient-to-t from-gray-800 to-black text-white border border-gray-700 hover:from-gray-600 hover:to-gray-800 rounded-md"
+                >
+                  LAUNCH APP  
+              </Button>
+            
+            </Link>
           </div>
         </div>
       </div>

@@ -21,46 +21,20 @@ const vaults = [
 
 const vaults2 = [
   {
-    icon: "/svgLandPage5/Device Laptop 2.svg",
+    icon: "/svg5/usdc.png",
   },
   {
-    icon: "/svgLandPage5/Card Shopping Card.svg",
+    icon: "/svg5/euro.png",
   },
   {
-    icon: "/svgLandPage5/Mail.svg",
+    icon: "/svg5/x.svg",
   },
-  {
-    icon: "/svgLandPage5/Image Sun Brightness.svg",
-  },
-  {
-    icon: "/svgLandPage5/Browser Window.svg",
-  },
-  {
-    icon: "/svgLandPage5/Hand Point Finger.svg",
-  },
-  {
-    icon: "/svgLandPage5/Device Mobile.svg",
-  },
-  {
-    icon: "/svgLandPage5/File.svg",
-  },
-  {
-    icon: "/svgLandPage5/msg.svg",
-  },
-  {
-    icon: "/svgLandPage5/Image.svg",
-  },
-  {
-    icon: "/svgLandPage5/Device Laptop 2.svg", // Duplicate just for illustration
-  },
-  {
-    icon: "/svgLandPage5/Mail.svg", // Duplicate just for illustration
-  },
+
 ];
 
 export default function Vaults() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center py-16 px-4">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center py-16 px-4" id="last">
       <h1 className="text-4xl md:text-5xl mb-12 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.93)] text-center duration-50">
         Active Vaults
       </h1>
@@ -93,26 +67,33 @@ export default function Vaults() {
         ))}
       </div>
 
-      <div className="text-center mt-24">
-        <h2 className="text-4xl md:text-5xl mb-12 text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.93)] text-center duration-50">
+
+      
+
+
+      <div className="text-center mt-24 w-full to-black z-0">
+        <h2 className="text-4xl md:text-5xl mb-12 drop-shadow-[0_0_5px_rgba(255,255,255,0.93)]">
           Supported Assets & Integrations
         </h2>
-        <div className="flex flex-wrap justify-center gap-4">
+
+        {/* Assets Icons */}
+        <div className="flex flex-wrap justify-center gap-10">
           {vaults2.map((vault, index) => (
             <div
               key={index}
-              className="w-14 h-14 rounded-xl bg-[#1a1a1a] border border-gray-800 flex items-center justify-center"
+              className={`flex items-center justify-center w-20 h-20 rounded-xl  transition duration-300  hover:shadow-[0_0_40px_10px_rgba(255,255,255,0.8)]`}
             >
               <Image
                 src={vault.icon}
                 alt={`Vault Icon ${index + 1}`}
-                width={32}
-                height={32}
+                width={100}
+                height={100}
                 className="text-white"
               />
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
