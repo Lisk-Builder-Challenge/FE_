@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Button } from '@/app/Vault/UI/button';
+//import { Button } from '@/app/Vault/UI/button';
 
 type Token = {
   symbol: string;
@@ -72,9 +72,9 @@ export default function DepositInterface() {
         </div>
       </div>
       
-      <Button className="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
+{/*<Button className="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
         Confirm Deposit
-      </Button>
+      </Button>*/}
     </div>
   );
 }

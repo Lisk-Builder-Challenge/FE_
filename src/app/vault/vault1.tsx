@@ -3,7 +3,7 @@ import React from "react";
 import { Inter } from 'next/font/google';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {useWriteContract, useWaitForTransactionReceipt} from "wagmi";
-import { address } from "framer-motion/client";
+//import { address } from "framer-motion/client";
 import {erc20Abi} from "viem";
 import vaultAbi from "@/app/abi/VaultABI.json"
 
