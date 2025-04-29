@@ -23,23 +23,23 @@ const Header = () => {
 
           {/* Navigation Section */}
           <div className="ml-auto flex items-center space-x-6">
-            <Link href="#whyUs" passHref className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+            {/* <Link href="#whyUs" passHref className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               
                 Why Us
               
-            </Link>
-            <a href="#Feat" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
-              Our Feature
+            </Link> */}
+            <a href="LandingPage" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+              HomePage
             </a>
-            <a href="#last" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
-              Vault
+            <a href="dashboard" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+              dashboard
             </a>
-            <a href="#how" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
-              How It Works
+            <a href="vault" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+              vault
             </a>
-            <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
+            {/* <a href="#" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               Docs
-            </a>
+            </a> */}
             {/* Launch App Button */}
             <Link href="/dashboard">
               <ConnectButton 

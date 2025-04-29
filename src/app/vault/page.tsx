@@ -3,10 +3,12 @@ import Vault1 from "@/app/vault/vault1"
 import Vault2 from "@/app/vault/vault2"
 import Vault3 from "@/app/vault/vault3"
 import Vault4 from "@/app/vault/vault4"
+import NavbarDashboard from "@/app/navbar&footer/navbarDashboard"
 
 const page = () => {
   return (
     <div>
+      <NavbarDashboard/>
       <Vault1/>
       <Vault2/>
       <Vault3/>
