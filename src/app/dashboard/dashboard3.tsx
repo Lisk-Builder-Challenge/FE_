@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 import { Inter } from 'next/font/google';
+import { EllipsisVertical } from 'lucide-react';
+import { StrategyDetails } from './strategyDetails';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -12,7 +14,16 @@ export default function StrategyAuctionTable() {
     apy: "6.1%",
     valueRestaked: "221 ETH",
     stakers: "10",
-    quorum: "Qualified"
+    quorum: "Qualified",
+    strategy: 'The vault buys these tokens and earns yield from T-bill interest',
+      totalManageVault: '500,000 USD++',
+      platforms: [
+        { name: 'Ondo Finance' },
+        { name: 'Maple Finance RWA' },
+        { name: 'OpenEden' },
+        { name: 'Backed.fi' }
+      ],
+      assetDetails: 'Tokenized U.S. Treasury Bills available on-chain'
   };
 
   const data2 = {
@@ -38,10 +49,10 @@ export default function StrategyAuctionTable() {
     <div className={`${inter.className} w-full flex justify-center px-4 py-10`}>
       <div className="w-[1241px] space-y-3">
         <h2 className="text-2xl font-semibold text-white">Current Strategy Auction</h2>
-
+  
         {/* Header */}
         <div
-          className="grid grid-cols-7 text-sm font-medium text-gray-300 rounded-[20px] border border-gray-700 shadow-md overflow-hidden"
+          className="grid grid-cols-8 text-sm font-medium text-gray-300 rounded-[20px] border border-gray-700 shadow-md overflow-hidden"
           style={sharedBoxStyle}
         >
           <div className="py-3 px-4 text-center">Operator</div>
@@ -51,21 +62,23 @@ export default function StrategyAuctionTable() {
           <div className="py-3 px-4 text-center">Total Value Restaked</div>
           <div className="py-3 px-4 text-center">Stakers</div>
           <div className="py-3 px-4 text-center">Quorum</div>
+          <div className="py-3 px-4 text-center">Details</div>
         </div>
 
         {/* Data row */}
         <div
-          className="grid grid-cols-7 text-sm text-white rounded-[20px] border border-gray-700 shadow-md overflow-hidden"
+          className="grid grid-cols-8 text-sm text-white rounded-[20px] border border-gray-700 shadow-md overflow-hidden"
           style={sharedBoxStyle}
         >
           <div className="py-4 px-4 text-center">{data.operator}</div>
           <div className="py-4 px-4 text-center">{data.vault}</div>
           <div className="py-4 px-4 text-center">{data.category}</div>
-          <div className="py-4 px-4 text-center underline">{data.apy}</div>
+          <div className="py-4 px-4 text-center">{data.apy}</div>
           <div className="py-4 px-4 text-center">{data.valueRestaked}</div>
           <div className="py-4 px-4 text-center">{data.stakers}</div>
           <div className="py-4 px-4 text-center">{data.quorum}</div>
-
+          <div className="py-4 px-4"><StrategyDetails {...data} /></div>
+          
           <div className="py-4 px-4 text-center">{data2.operator}</div>
           <div className="py-4 px-4 text-center">{data2.vault}</div>
           <div className="py-4 px-4 text-center">{data2.category}</div>
