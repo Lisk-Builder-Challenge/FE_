@@ -1,7 +1,12 @@
 'use client';
 import React from "react";
 import { Inter } from 'next/font/google';
-import Image from "next/image";
+// import { ConnectButton } from '@rainbow-me/rainbowkit';
+import {useWriteContract, useWaitForTransactionReceipt} from "wagmi";
+//import { address } from "framer-motion/client";
+import {erc20Abi} from "viem";
+import vaultAbi from "@/app/abi/VaultABI.json"
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,7 +20,26 @@ const sharedBoxStyle = {
   border: '1px solid rgba(255, 255, 255, 0.2)',
 };
 
+
 export default function VaultCard() {
+
+  const { writeContract, isPending, data: hash } = useWriteContract();
+  const {isLoading, isError, isSuccess} = useWaitForTransactionReceipt({hash});
+  const handleApproval = async () => {
+    writeContract({
+      address : "0x123d93fc5188c561A89B52F2A429D026B696c2c2", abi: erc20Abi, functionName: "approve", args: [ "0x031fad29699d6fDeC5353b9C58c81313E1B15a06", BigInt(1000)]
+      
+    });
+  }
+
+  const handleDeposit = async () => {
+    writeContract({
+      abi: vaultAbi, address: "0x031fad29699d6fDeC5353b9C58c81313E1B15a06", functionName: "deposit", args: [BigInt(1000)]
+    })
+  }
+
+
+
   return (
     <div className={`${inter.className} flex justify-center items-center bg-black px-6 py-10`}>
       <div
@@ -28,6 +52,14 @@ export default function VaultCard() {
             <h2 className="text-2xl font-semibold">USD++ Vault</h2>
             <p className="text-gray-400 mt-1">
               Earn real yield from multiple DeFi protocols while maintaining stable exposure to USD
+              <br/>
+              {isPending ? "pending" : "tidak pending"}
+              <br/>
+              {isLoading ? "sedang loading" : "tidak loading"}
+              <br/>
+              {isError ? "sedang error" : "tidak error"}
+              <br/>
+              {isSuccess ? "success" : "tidak success"}
             </p>
           </div>
           <div className="flex items-center gap-3 mt-6">
@@ -36,13 +68,23 @@ export default function VaultCard() {
           </div>
           <div className="flex gap-4 mt-4">
             {['Deposit', 'Withdraw', 'Restake'].map((label) => (
-              <button
+              <button 
+                onClick={handleDeposit}
                 key={label}
                 className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
               >
                 {label}
               </button>
+              
             ))}
+          </div>
+          <div>
+          <button 
+                onClick={handleApproval}
+                className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
+              >
+                Approval
+              </button>
           </div>
         </div>
 
@@ -75,6 +117,11 @@ export default function VaultCard() {
           </div>
         </div>
       </div>
+
+      
+      
+
+
     </div>
   );
 }
