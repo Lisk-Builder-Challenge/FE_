@@ -10,7 +10,7 @@ export default function VaultDashboard() {
 
   return (
     <div className={'${inter.className} min-h-screen bg-black text-white px-6 py-10 flex flex-col items-center gap-12'}>
-      <div className="text-center space-y-4 max-w-3xl">
+      <div className="text-center space-y-4 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
           Let’s build the decentralized <span className="text-gray-300">BlackRock</span> — <span className="text-white">together.</span>
         </h1>
@@ -19,15 +19,18 @@ export default function VaultDashboard() {
         </p>
       </div>
 
+      {/* Card Success Mode */}
       <div  
         className="relative flex flex-col rounded-[40px] w-[1241px] h-[194px] p-5 shadow-lg border border-gray-700 text-white"
         style={{
-            backgroundImage: `
-                radial-gradient(circle at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 80%),
-                linear-gradient(180deg, rgba(46, 51, 90, 0.3) 0%, rgba(28, 27, 51, 0.3) 20%)
+            backgroundImage: 'linear-gradient(to bottom, rgba(46, 51, 90, 0) 44%, rgba(66, 30, 134, 0.8) 100%)',
+            boxShadow: `
+              0px 30px 60px 0px rgba(0, 0, 0, 0.10),
+              0px 15px 30px 0px rgba(0, 0, 0, 0.05),
+              0px 5px 10px 0px rgba(0, 0, 0, 0.05),
+              inset 0px 0px 100px 0px rgba(204, 215, 255, 0.15)
             `,
-            backgroundBlendMode: 'overlay',
-            backdropFilter: 'blur(16px)',
+            backdropFilter: 'blur(10px)',
         }}
       >
         <div className="flex justify-between items-center mb-14">

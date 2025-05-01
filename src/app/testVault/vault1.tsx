@@ -39,7 +39,7 @@ export default function VaultCard() {
   //   })
   // }
 
-
+  //const[isDeposiste, setIsDeposit] = useState(true);
 
   return (
     <div className={`${inter.className} flex justify-center items-center bg-black px-6 py-10`}>
@@ -80,6 +80,7 @@ export default function VaultCard() {
                 onClick={()=>alert("hehe")}
                 key={label}
                 className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
+                style={{zIndex: 10}}
               >
                 {label}
               </button>
