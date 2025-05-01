@@ -12,14 +12,13 @@ export default function Home() {
       {/* Background Aura */}
       <div className="absolute inset-0 z-5 flex items-start justify-center">
         <div className="relative w-full h-full -translate-y-30">
-          <Image
-            src="/svgLP1/Ellipse.svg"
-            alt="Background Aura"
-            layout="fill"
-            objectFit="contain"
-            className="opacity-50"
-
-          />
+                <Image
+          src="/svgLP1/Ellipse.svg"
+          alt="Background Aura"
+          layout="fill"
+          objectFit="contain"
+          className="opacity-50 float-left-animation"
+        />
         </div>
       </div>
       
@@ -30,7 +29,7 @@ export default function Home() {
         <h1
         className="text-4xl md:text-5xl font-bold leading-tight mb-6 bg-clip-text text-transparent"
         style={{
-            backgroundImage: 'linear-gradient(70deg, white 5%, #cccccc 10%, #666666 60%, black 98%)',
+            backgroundImage: 'linear-gradient(70deg, white 5%, #cccccc 10%, #666666 60%, black 99.7%)',
         }}
         >
         Earn Yield, Stay Stable —<br />
@@ -42,9 +41,6 @@ export default function Home() {
         Earn yield on USDC, IDRX, or EUROC through<br />
         permissionless, competitive manager strategies.
         </p>
-
-
-        
 
         {/* Buttons */}
         <div className="flex flex-wrap gap-4 mb-20">
@@ -67,6 +63,7 @@ export default function Home() {
         
         {/* Phone + Floating Hexagons */}
         <div className="relative w-[595px] h-[350px] overflow-hidden mb-20">
+
         {/* iPhone setengah */}
             <Image
                 src="/svgLP1/iPhone.svg"
@@ -96,7 +93,6 @@ export default function Home() {
                 />
             </div>
         </div>
-
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+import React, { useEffect } from "react";
 import { Inter } from 'next/font/google';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {useWriteContract, useWaitForTransactionReceipt} from "wagmi";
@@ -52,13 +52,13 @@ export default function VaultCard() {
             <h2 className="text-2xl font-semibold">USD++ Vault</h2>
             <p className="text-gray-400 mt-1">
               Earn real yield from multiple DeFi protocols while maintaining stable exposure to USD
-              <br/>
-              {isPending ? "pending" : "tidak pending"}
+              {/*<br/>
+              { {isPending ? "pending" : "tidak pending"}
               <br/>
               {isLoading ? "sedang loading" : "tidak loading"}
               <br/>
               {isError ? "sedang error" : "tidak error"}
-              <br/>
+              <br/>*/}
               {isSuccess ? "success" : "tidak success"}
             </p>
           </div>
@@ -77,16 +77,17 @@ export default function VaultCard() {
               </button>
               
             ))}
-          </div>
+          {/* { </div>
           <div>
           <button 
                 onClick={handleApproval}
                 className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
               >
                 Approval
-              </button>
-          </div>
+              </button> }
+          </div> */}
         </div>
+      
 
         {/* Kanan - hanya statistik, tanpa shape */}
         <div className="flex flex-col justify-end items-end flex-1">
@@ -117,11 +118,20 @@ export default function VaultCard() {
           </div>
         </div>
       </div>
-
-      
-      
-
-
+    </div>
     </div>
   );
+  // useEffect allert di dalam komponen 
+  useEffect(()=> {
+    if (isPending) alert('Sistem sedang Pending!');
+  }, [isPending]);
+
+  useEffect(()=> {
+    if (isLoading) alert('Sistem sedang memuat data');
+  }, [isLoading]);
+
+  useEffect(()=> {
+    if(isError) alert('Terjadi kesalahan pada Sistem!');
+  }, [isError]);
+
 }

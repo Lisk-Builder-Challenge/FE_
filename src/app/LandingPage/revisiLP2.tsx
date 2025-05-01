@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b text-white flex flex-col items-center justify-center px-6 py-5 relative" id="whyUs">
       {/* Background Image */}
-      <div className="absolute top-0 left-0 w-full h-full z-10 mt-[-150] mr-[-30]">
+      <div className="absolute top-0 left-0 w-full h-full z-10 mt-[-300] mr-[-50]">
         <Image
           src="/svg2/BlurB.png"
           alt="Background Aura"
