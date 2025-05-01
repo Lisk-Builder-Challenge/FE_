@@ -42,7 +42,7 @@ export default function VaultCard() {
   // }
 
   //const[isDeposiste, setIsDeposit] = useState(true);
-  
+  const [usdcAmount, setUsdcAmount] = useState('');
   const [isDeposit, setIsDeposit] = useState(true);
 
   return (
@@ -98,15 +98,23 @@ export default function VaultCard() {
                 style={{zIndex: 10}}
               >
                 Deposit
-              </button>
-              <button 
+            </button>
+            <button 
                 //onClick={handleDeposit}
                 onClick={()=>setIsDeposit(false)}
                 className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
                 style={{zIndex: 10}}
               >
                 Withdraw
-              </button>
+            </button>
+            <button 
+                //onClick={handleDeposit}
+                onClick={()=>setIsDeposit(false)}
+                className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
+                style={{zIndex: 10}}
+              >
+                Approval
+            </button>
             
           </div>
 
@@ -140,8 +148,6 @@ export default function VaultCard() {
                   />
               </div> */}
 
-
-
               <div className="flex justify-end mt-[120] gap-8 text-center bg-transparent ">
                 <div>
                   <p className="text-lg font-semibold">8.2%</p>
@@ -160,15 +166,7 @@ export default function VaultCard() {
               </div>
             </div>
         </div>
-
-
-
-
       </div>
-
-      
-      
-
 
     </div>
     {isDeposit ? (
@@ -184,13 +182,22 @@ export default function VaultCard() {
       <div className="flex gap-6 mb-6">
         {/* Input Section */}
         <div className="flex flex-col gap-3 w-1/2">
+          {/* USDC Input */}
           <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
             <div>
               <p className="text-sm font-medium">USDC</p>
               <p className="text-sm text-gray-400">Balance: 0.00</p>
             </div>
-            <p className="text-lg font-semibold">0.00</p>
+            <input
+              inputMode="decimal"
+              className="bg-transparent text-right text-lg font-semibold focus:outline-none w-24"
+              placeholder="0.00"
+              value={usdcAmount}
+              onChange={(e) => setUsdcAmount(e.target.value)}
+            />
           </div>
+
+          {/* USD++ Output */}
           <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
             <div>
               <p className="text-sm font-medium">USD++</p>
@@ -227,8 +234,8 @@ export default function VaultCard() {
 
       {/* Confirm Button */}
       <button
-        className="w-full py-3 rounded-xl text-sm font-medium text-white bg-amber-700"
-        onClick={()=>alert("hehehjhff")}
+        className="w-full py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
+        onClick={() => alert(`Deposit amount: ${usdcAmount} USDC`)}
         style={{
           backgroundImage: `
             radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 80%),
@@ -240,7 +247,6 @@ export default function VaultCard() {
       >
         Confirm Deposit
       </button>
-      
     </div>
 
     ) : (<div
@@ -298,7 +304,7 @@ export default function VaultCard() {
 
       {/* Confirm Button */}
       <button
-        className="w-full py-3 rounded-xl text-sm font-medium text-white bg-amber-700"
+        className="w-full py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black "
         onClick={()=>alert("hehehjhff")}
         style={{
           backgroundImage: `
