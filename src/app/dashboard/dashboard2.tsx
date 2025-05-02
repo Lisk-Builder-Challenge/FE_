@@ -21,7 +21,7 @@ export default function Portofolio() {
   ];
 
   return (
-    <div className={`${inter.className} bg-black flex justify-center items-center px-4 py-10 mt-[-500]`}>
+    <div className={`${inter.className} bg-black flex justify-center items-center px-4 py-10 mt-[-150]`}>
       <div
         className="relative flex flex-col rounded-[40px] w-[1241px] p-5 shadow-lg border border-gray-700 text-white space-y-6"
         style={{

@@ -93,18 +93,13 @@ export default function VaultCard() {
             <p className="text-gray-400 mt-1">
               Earn real yield from multiple DeFi protocols while maintaining stable exposure to USD
               {/*<br/>
-<<<<<<< HEAD
-              { {isPending ? "pending" : "tidak pending"}
-=======
               {isPending ? "pending" : "tidak pending"}
->>>>>>> cefdca9101291fc7dd1d2a842d2bd7af2457327e
               <br/>
               {isLoading ? "sedang loading" : "tidak loading"}
               <br/>
               {isError ? "sedang error" : "tidak error"}
               <br/>*/}
-              {isSuccess ? "success" : "tidak success"}
-              */}
+              {/* //{isSuccess ? "success" : "tidak success"} */}
             </p>
           </div>
           <div className="flex items-center gap-3 mt-6">
@@ -121,18 +116,6 @@ export default function VaultCard() {
                 {label}
               </button>
               
-<<<<<<< HEAD
-            ))}
-          {/* { </div>
-          <div>
-          <button 
-                onClick={handleApproval}
-                className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
-              >
-                Approval
-              </button> }
-          </div> */}
-=======
             ))}*/}
 
             <button 
@@ -162,7 +145,6 @@ export default function VaultCard() {
             
           </div>
           </div>
->>>>>>> cefdca9101291fc7dd1d2a842d2bd7af2457327e
         </div>
       
 
@@ -185,26 +167,6 @@ export default function VaultCard() {
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-      </div>
-    </div>
-    </div>
-  );
-  // useEffect allert di dalam komponen 
-  useEffect(()=> {
-    if (isPending) alert('Sistem sedang Pending!');
-  }, [isPending]);
-
-  useEffect(()=> {
-    if (isLoading) alert('Sistem sedang memuat data');
-  }, [isLoading]);
-
-  useEffect(()=> {
-    if(isError) alert('Terjadi kesalahan pada Sistem!');
-  }, [isError]);
-
-}
-=======
 
       </div>
       
@@ -403,4 +365,3 @@ export default function VaultCard() {
                   Withdraw
             </button>
 */}
->>>>>>> cefdca9101291fc7dd1d2a842d2bd7af2457327e
