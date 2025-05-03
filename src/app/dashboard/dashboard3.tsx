@@ -14,7 +14,7 @@ export default function StrategyAuctionTable() {
     apy: "6.1%",
     valueRestaked: "221 ETH",
     stakers: "10",
-    quorum: "Qualified",
+    quorum: "unQualified",
     strategy: 'The vault buys these tokens and earns yield from T-bill interest',
       totalManageVault: '500,000 USD++',
       platforms: [
@@ -31,7 +31,7 @@ export default function StrategyAuctionTable() {
     vault: "T-Bill Vault",
     category: "RWA",
     apy: "4.8%",
-    valueRestaked: "1,200,000 USDC",
+    valueRestaked: "1200 ETH",
     stakers: "1,210",
     quorum: "Qualified",
     strategy: "USDC deposited into a vault that earns yield from tokenized U.S.",
@@ -48,7 +48,7 @@ export default function StrategyAuctionTable() {
       vault: "bIB01 (iShares Bond ETF)",
       category: "RWA",
       apy: "5.1%",
-      valueRestaked: "300,000 DAI",
+      valueRestaked: "300 ETH",
       stakers: "432",
       quorum: "Qualified",
       strategy: "Backed issues tokens backed 1:1 with real-world ETFs and bonds",
@@ -74,7 +74,7 @@ export default function StrategyAuctionTable() {
     const data5 = {
       operator: "Maple Finance",
       vault: "USDC Lending Pool",
-      category: "DeFi Credit",
+      category: "RWA",
       apy: "7.2%",
       valueRestaked: "850,000 USDC",
       stakers: "1,430",
@@ -90,11 +90,11 @@ export default function StrategyAuctionTable() {
       vault: "Tinlake",
       category: "RWA",
       apy: "6.4%",
-      valueRestaked: "2,500,000 DAI",
+      valueRestaked: "2,500 ETH",
       stakers: "1,050",
       quorum: "Qualified",
       strategy: "Real-world assets (like invoices, real estate) tokenized and used as collateral",
-      totalManageVault: "30,000,000 USD",
+      totalManageVault: "30,000 USD",
       platforms: [{ name: 'Centrifuge' }],
       assetDetails: "Tokenized RWAs such as invoices and credit lines"
     };
@@ -102,13 +102,13 @@ export default function StrategyAuctionTable() {
     const data7 = {
         operator: "Stader Labs",
         vault: "ETHx Staking",
-        category: "Liquid Staking",
+        category: "RWA",
         apy: "3.9%",
         valueRestaked: "22,500 ETH",
         stakers: "6,200",
-        quorum: "Open",
+        quorum: "unqualified",
         strategy: "Stakes ETH across validators with built-in liquidity token (ETHx)",
-        totalManageVault: "70,000,000 USD",
+        totalManageVault: "70,000 USD",
         platforms: [
           { name: "Ethereum" },
           { name: "Polygon" },
@@ -120,9 +120,9 @@ export default function StrategyAuctionTable() {
     const data8 = {
       operator: "Goldfinch",
       vault: "USDC Senior Pool",
-      category: "Private Credit",
+      category: "RWA",
       apy: "10.3%",
-      valueRestaked: "7,100,000 USDC",
+      valueRestaked: "7,100 USDC",
       stakers: "1,050",
       quorum: "Qualified",
       strategy: "Loans to off-chain businesses via crypto-native credit lines",
@@ -139,7 +139,7 @@ export default function StrategyAuctionTable() {
       vault: "STBT (Short-term Treasury Token)",
       category: "RWA",
       apy: "5.0%",
-      valueRestaked: "5,800,000 USDC",
+      valueRestaked: "5,800 USDC",
       stakers: "890",
       quorum: "Qualified",
       strategy: "1:1 USDC-backed tokenized exposure to short-term US T-Bills",
@@ -155,9 +155,9 @@ export default function StrategyAuctionTable() {
     const data10 =   {
       operator: "Centrifuge",
       vault: "Tinlake Pool",
-      category: "Asset-Backed Lending",
+      category: "RWA",
       apy: "8.2%",
-      valueRestaked: "4,400,000 DAI",
+      valueRestaked: "4,400 ETH",
       stakers: "430",
       quorum: "Qualified",
       strategy: "Loans backed by tokenized real-world assets (invoices, real estate)",
@@ -189,7 +189,7 @@ export default function StrategyAuctionTable() {
             paddingBottom: '0.25em',
             overflow: 'visible',
           }}>
-          Current Srategy Auction
+          Current Strategy Auction
           </h2>
   
         {/* Header */}

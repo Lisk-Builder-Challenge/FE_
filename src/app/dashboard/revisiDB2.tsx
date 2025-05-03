@@ -19,7 +19,6 @@ const vaults = [
   },
 ];
 
-
 export default function Vaults() {
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center py-16 px-4" id="last">
@@ -55,11 +54,6 @@ export default function Vaults() {
         ))}
       </div>
 
-
-      
-
-
-      
 
     </div>
     

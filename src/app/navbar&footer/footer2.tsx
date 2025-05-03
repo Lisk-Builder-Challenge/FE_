@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Image
-              src="/Logo.svg" 
+              src="/logoTulis.svg" 
               alt="Logo"
               width={120} 
               height={40} 
@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Navigation Sections */}
           <div className="flex space-x-12">
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold">Products</h4>
+              <h4 className="text-sm font-semibold">Productst</h4>
               <ul className="space-y-2 text-sm text-gray-500">
                 <li><a href="#" className="hover:text-gray-400">Vaults</a></li>
                 <li><a href="#" className="hover:text-gray-400">Docs</a></li>

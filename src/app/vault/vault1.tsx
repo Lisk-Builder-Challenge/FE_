@@ -203,12 +203,12 @@ export default function VaultCard() {
               
             ))}*/}
 
-            <button 
+            {/* <button 
                   onClick={handleApproval}
                   className="border border-white/30 px-6 py-2 rounded-md text-sm transition bg-transparent hover:bg-white hover:text-black active:bg-white/10"
                 >
                   Approval
-            </button>
+            </button> */}
 
             <button 
                   //onClick={handleDeposit}
@@ -339,7 +339,7 @@ export default function VaultCard() {
           <button
             className="w-full py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
             //onClick={() => alert(`Deposit amount: ${usdcAmount} USDC`)}
-            onClick={handleDeposit}
+            onClick={handleApproval}
             style={{
               backgroundImage: `
                 radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 80%),

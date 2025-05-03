@@ -13,7 +13,7 @@ const Header = () => {
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Image
-              src="/Logo.svg" 
+              src="/logoTulis.png" 
               alt="Logo"
               width={120} 
               height={40} 
@@ -45,8 +45,8 @@ const Header = () => {
               <ConnectButton 
               variant="default"
               className="flex items-center gap-2 px-6 py-3 text-md bg-gradient-to-t from-gray-800 to-black text-white border border-gray-700 hover:from-gray-600 hover:to-gray-800 rounded-md"
-                >
-                  CONNECT dfadbfl
+              >
+                  CONNECT
               </ConnectButton>
             
             </Link>

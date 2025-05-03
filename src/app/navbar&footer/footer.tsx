@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Image
-              src="/Logo.svg" 
+              src="/logoTulis.png" 
               alt="Logo"
               width={120} 
               height={40} 

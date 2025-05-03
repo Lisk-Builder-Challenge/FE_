@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { Card, CardContent } from "@/app/animasi/cardLanding4";
 import { Button } from "@/app/animasi/buttonLanding4";
 import Image from "next/image";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -71,15 +72,17 @@ export default function Portofolio() {
                 
                 <div className="self-stretch self-stretch py-2 inline-flex flex-col justify-start items-start gap-5">
                     <div className="self-stretch inline-flex justify-between items-center">
-                        <div className="justify-start text-Foreground-Primary text-2xl font-medium font-['Inter'] [text-shadow:_0px_0px_20px_rgb(255_255_255_/_0.50)]">IDRX++</div>
+                        <div className="justify-start text-Foreground-Primary text-2xl font-medium font-['Inter'] [text-shadow:_0px_0px_20px_rgb(255_255_255_/_0.50)]">{vault.name}</div>
                         <div className="justify-start text-Foreground-Primary text-2xl font-medium font-['Inter'] [text-shadow:_0px_0px_20px_rgb(255_255_255_/_0.50)]">$50,000</div>
                     </div>
 
                     {/* Button Deposit dan Withdraw */}
                     <div className="inline-flex justify-start items-start gap-5">
-                        <Button variant="outline" className="px-4 py-2 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/60 flex justify-start items-center gap-3">
+                      <Link href="/vault">
+                        <Button  variant="outline" className="px-4 py-2 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/60 flex justify-start items-center gap-3">
                           Deposit
                         </Button>
+                      </Link>
                         <Button variant="outline" className="px-4 py-2 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/60 flex justify-start items-center gap-3">
                           Withdraw  
                         </Button>
