@@ -1,8 +1,8 @@
 import React from 'react'
-import Vault1 from "@/app/Vault/vault1"
+import Vault1 from "@/app/vault/vault1"
  ///import Vault2 from "@/app/vault/vault2"
- import Vault3 from "@/app/Vault/vault3"
- import Vault4 from "@/app/Vault/vault4"
+ import Vault3 from "@/app/vault/vault3"
+ import Vault4 from "@/app/vault/vault4"
  import Navbar from "@/app/navbar&footer/navbarDashboard"
 
 const page = () => {
