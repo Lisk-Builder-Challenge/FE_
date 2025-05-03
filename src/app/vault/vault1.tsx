@@ -1,8 +1,10 @@
 'use client';
-import React, { useEffect } from "react";
+import React from "react";
+//import { useEffect } from "react";
 import { Inter } from 'next/font/google';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
-import {useWriteContract, useWaitForTransactionReceipt} from "wagmi";
+import {useWriteContract, useReadContract, useAccount, useWaitForTransactionReceipt} from "wagmi";
+//import { useWaithForTransaction } from "wagmi";
 //import { address } from "framer-motion/client";
 import {erc20Abi} from "viem";
 import vaultAbi from "@/app/abi/VaultABI.json"
@@ -23,10 +25,10 @@ const sharedBoxStyle = {
 
 
 export default function VaultCard() {
-  
 
   const { writeContract, isPending, data: hash } = useWriteContract();
-  //const {isLoading, isError, isSuccess} = useWaitForTransactionReceipt({hash});
+  const {isLoading, isError, isSuccess} = useWaitForTransactionReceipt({hash});
+
   const handleApproval = async () => {
     const amount = parseFloat(usdcAmount);  // Mendapatkan jumlah yang dimasukkan oleh pengguna
 
@@ -44,8 +46,66 @@ export default function VaultCard() {
     });
     alert(`Approval successful! You can now deposit ${usdcAmount} USDC.`);
   }
+  
 
-    const handleDeposit = async () => {
+  
+{/*}
+  const ReadBalance = () => {
+    const { address } = useAccount();
+    
+    const { data: balance } = useReadContract({
+      abi: erc20Abi,
+      address: '0x031fad29699d6fDeC5353b9C58c81313E1B15a06',
+      functionName: 'balanceOf',
+      args: [address as `0x${string}`], 
+    });
+  
+    //const formattedVaultBalance = balance ? Number(balance) / 10 ** 6 : 0;
+  
+    // return (
+    //   <div>
+    //     {address
+    //       ? `Balance: ${formattedBalance.toFixed(2)} USDC`
+    //       : 'Wallet not connected.'}
+    //   </div>
+    // );
+    return <div>Balance: {balance?.toString()}</div>;
+
+  };
+  */}
+
+
+    const { address } = useAccount();
+    
+    const { data: balance } = useReadContract({
+      abi: vaultAbi,
+      address: '0x031fad29699d6fDeC5353b9C58c81313E1B15a06',
+      functionName: 'balanceOf',
+      args: [address as `0x${string}`], 
+    });
+  
+    //const formattedVaultBalance = balance ? Number(balance) / 10 ** 6 : 0;
+  
+    // return (
+    //   <div>
+    //     {address
+    //       ? `Balance: ${formattedBalance.toFixed(2)} USDC`
+    //       : 'Wallet not connected.'}
+    //   </div>
+    // );
+   
+
+  
+
+  //const formattedVaultBalance = balance ? Number(balance) / 10 ** 6 : 0;
+  
+  
+  
+  
+
+
+
+  const handleDeposit = async () => {
     
     const amount = parseFloat(usdcAmount);
     if(!usdcAmount || isNaN(amount) || parseFloat(usdcAmount) <= 0)  {
@@ -104,15 +164,16 @@ export default function VaultCard() {
             <h2 className="text-2xl font-semibold">USD++ Vault</h2>
             <p className="text-gray-400 mt-1">
               Earn real yield from multiple DeFi protocols while maintaining stable exposure to USD
-              {/*<br/>
+              <br/>
               {isPending ? "pending" : "tidak pending"}
               <br/>
               {isLoading ? "sedang loading" : "tidak loading"}
               <br/>
               {isError ? "sedang error" : "tidak error"}
-              <br/>*/}
-              {/* //{isSuccess ? "success" : "tidak success"} */}
+              <br/>
+              {isSuccess ? "success" : "tidak success"}
             </p>
+            
           </div>
           <div className="flex items-center gap-3 mt-6">
             <span className="h-3 w-3 rounded-full bg-blue-500" />
@@ -173,7 +234,7 @@ export default function VaultCard() {
                 <p className="text-gray-400 text-sm">TVL</p>
               </div>
               <div>
-                <p className="text-lg font-semibold">$5,234</p>
+                <p className="text-lg font-semibold">${balance?.toString()}</p>
                 <p className="text-gray-400 text-sm">Your Balance</p>
               </div>
             </div>
@@ -199,7 +260,7 @@ export default function VaultCard() {
               <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium">USDC</p>
-                  <p className="text-sm text-gray-400">Balance: 0.00</p>
+                  <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
                   
                 </div>
                 <input
@@ -215,7 +276,7 @@ export default function VaultCard() {
               <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium">USD++</p>
-                  <p className="text-sm text-gray-400">Balance: 0.00</p>
+                  <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
                 </div>
                 <p className="text-lg font-semibold"
                 >{usdcAmount ? usdcAmount : "0.00"}</p>
@@ -281,8 +342,8 @@ export default function VaultCard() {
                   {/* USDC Input */}
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium">USDC</p>
-                      <p className="text-sm text-gray-400">Balance: 0.00</p>
+                      <p className="text-sm font-medium">USD++</p>
+                      <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
                     </div>
                     <input
                       inputMode="decimal"
@@ -296,7 +357,7 @@ export default function VaultCard() {
                   {/* USD++ Output */}
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium">USD++</p>
+                      <p className="text-sm font-medium">USDC</p>
                       <p className="text-sm text-gray-400">Balance: 0.00</p>
                     </div>
                     <p className="text-lg font-semibold">0.00</p>
@@ -347,7 +408,7 @@ export default function VaultCard() {
             </div>
         )
         }
-
+      
 
     </div>
   );
