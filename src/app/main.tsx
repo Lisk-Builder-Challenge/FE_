@@ -7,6 +7,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 import {
   getDefaultConfig,
   RainbowKitProvider,
+  Chain,
 } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
 import {
@@ -16,14 +17,38 @@ import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
+import { defineChain } from "viem";
 
 const queryClient = new QueryClient();
 
+const pharosDevnet = defineChain({
+  id: 50002,
+  name: 'PharosDevnet',
+  nativeCurrency: {
+      decimals: 18,
+      name: 'Ether',
+      symbol: 'ETH',
+  },
+  rpcUrls: {
+      default: {
+          http: ['https://devnet.dplabs-internal.com'],
+          webSocket: ['https://grafana.dplabs-internal.com/']
+      },
+  },
+  blockExplorers: {
+      default: {
+          name: 'Explorer',
+          url: 'https://pharosscan.xyz/'
+      }
+  },
+});
+
+export { pharosDevnet };
 
 const config = getDefaultConfig({
   appName: 'My RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
-  chains: [monadTestnet],
+  chains: [ pharosDevnet],
   ssr: true, // If your dApp uses server side rendering (SSR)
 });
 

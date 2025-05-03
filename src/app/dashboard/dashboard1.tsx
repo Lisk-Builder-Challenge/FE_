@@ -15,7 +15,7 @@ export default function VaultDashboard() {
           Let’s build the decentralized <span className="text-gray-300">BlackRock</span> — <span className="text-white">together.</span>
         </h1>
         <p className="text-gray-400 text-lg">
-          A next-gen stablecoin vault platform that rewards users, empowers strategists, and is underwritten by restakers through liquid restaking tokens (LRTs). All powered by strategy auctions and transparent governance.
+          A next-gen stablecoin vault platform that rewards users, empowers strategists, and is underwritten by restakers through liquid restaking tokens (LRTs). All powered by multi strategies and transparent governance.
         </p>
       </div>
 

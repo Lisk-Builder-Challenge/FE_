@@ -1,6 +1,6 @@
 'use client';
 import React from "react";
-//import { useEffect } from "react";
+import { useEffect } from "react";
 import { Inter } from 'next/font/google';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {useWriteContract, useReadContract, useAccount, useWaitForTransactionReceipt} from "wagmi";
@@ -25,7 +25,8 @@ const sharedBoxStyle = {
 
 
 export default function VaultCard() {
-
+  const [actionType, setActionType] = useState('');
+  const [InputusdcAmount, setInputUsdcAmount] = useState('');
   const { writeContract, isPending, data: hash } = useWriteContract();
   const {isLoading, isError, isSuccess} = useWaitForTransactionReceipt({hash});
 
@@ -38,16 +39,39 @@ export default function VaultCard() {
     }
 
     const parsedAmount = BigInt(amount * 10 ** 6);
-
+    setActionType('approval');
+    alert(`Requesting approval for ${usdcAmount} USDC...`);
     writeContract({
       address : "0x123d93fc5188c561A89B52F2A429D026B696c2c2", abi: erc20Abi, functionName: "approve", args: [ "0x031fad29699d6fDeC5353b9C58c81313E1B15a06", parsedAmount]
-      
-      
     });
     alert(`Approval successful! You can now deposit ${usdcAmount} USDC.`);
   }
   
+  // useEffect(() => {
+  //   if (isPending && actionType === 'approval') {
+  //     alert("Approval transaction submitted. Waiting for confirmation...");
+  //   }
+  // }, [isPending, actionType]);
 
+  useEffect(() => {
+    if (isLoading && actionType === 'approval') {
+      alert("Approval transaction is being processed on the blockchain");
+    }
+  }, [isLoading, actionType]);
+
+  useEffect(() => {
+    if (isError && actionType === 'approval') {
+      alert("Approval transaction failed! Please try again.");
+      setActionType('');
+    }
+  }, [isError, actionType]);
+
+  useEffect(() => {
+    if (isSuccess && actionType === 'approval') {
+      alert("Approval successful! You can now deposit ${usdcAmount} USDC");
+      setActionType('');
+    }
+  }, [isSuccess, actionType, InputusdcAmount]);
   
 {/*}
   const ReadBalance = () => {
@@ -73,13 +97,11 @@ export default function VaultCard() {
 
   };
   */}
-
-
     const { address } = useAccount();
     
     const { data: balance } = useReadContract({
       abi: vaultAbi,
-      address: '0x031fad29699d6fDeC5353b9C58c81313E1B15a06',
+      address: '0xF065f94c52F78c9978585f2372D18efaD9b1cC87',
       functionName: 'balanceOf',
       args: [address as `0x${string}`], 
     });
@@ -93,17 +115,8 @@ export default function VaultCard() {
     //       : 'Wallet not connected.'}
     //   </div>
     // );
-   
-
-  
 
   //const formattedVaultBalance = balance ? Number(balance) / 10 ** 6 : 0;
-  
-  
-  
-  
-
-
 
   const handleDeposit = async () => {
     
@@ -119,8 +132,7 @@ export default function VaultCard() {
     }
 
     const parsedAmount = BigInt(Number(usdcAmount) * 10 ** 18); 
-
-
+    
     writeContract({
       abi: vaultAbi, address: "0x031fad29699d6fDeC5353b9C58c81313E1B15a06", functionName: "deposit", args: [parsedAmount]
     })
@@ -161,17 +173,17 @@ export default function VaultCard() {
         {/* Kiri */}
         <div className="flex flex-col justify-between flex-1 pr-8">
           <div>
-            <h2 className="text-2xl font-semibold">USD++ Vault</h2>
+            <h2 className="text-4xl font-semibold">USD++ Vault</h2>
             <p className="text-gray-400 mt-1">
               Earn real yield from multiple DeFi protocols while maintaining stable exposure to USD
-              <br/>
+              {/* <br/>
               {isPending ? "pending" : "tidak pending"}
               <br/>
               {isLoading ? "sedang loading" : "tidak loading"}
               <br/>
               {isError ? "sedang error" : "tidak error"}
               <br/>
-              {isSuccess ? "success" : "tidak success"}
+              {isSuccess ? "success" : "tidak success"} */}
             </p>
             
           </div>
@@ -221,25 +233,40 @@ export default function VaultCard() {
         </div>
       
 
-        {/* Kanan - hanya statistik, tanpa shape */}
-        <div className="flex flex-col justify-end items-end flex-1">
-        <div className="px-8 py-3 rounded-2xl backdrop-blur-md border border-white/10 bg-black/40 shadow-md bg-[url('/vault1.png')] bg-no-repeat bg-auto bg-left-top h-[200px]">
-            <div className="flex justify-center gap-8 text-center bg-transparent items-end self-end mt-30">
-              <div>
-                <p className="text-lg font-semibold">8.2%</p>
-                <p className="text-gray-400 text-sm">Current APY</p>
+      {/* Kanan */}
+      <div className="flex flex-col justify-center items-center flex-1 relative">
+                <div className="w-full h-[300px] rounded-3xl backdrop-blur-md border border-white/10 shadow-md bg-black/40 relative overflow-hidden">
+
+                <div className="absolute -bottom-20 left-1/2 w-[200%] h-40 transform -translate-x-1/2 z-5"
+                style={{
+                  background: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 230, 0, 0.15) 0%, rgba(255, 230, 0, 0) 100%)',
+                  filter: 'blur(40px)'
+                }}/>
+          
+                {/* Background Shape Hitam */}
+                <div className="absolute inset-0 bg-black rounded-2xl opacity-70 z-0" />
+
+                {/* Gambar di atas shape */}
+                <div className="absolute inset-0 bg-[url('/vault1.png')] bg-no-repeat bg-contain bg-center z-10" />
+
+                {/* Kontainer Statistik di atas gambar */}
+                <div className="absolute bottom-4 left-1/3 transform -translate-x-1/4 flex gap-16 text-center z-20">
+                  <div>
+                    <p className="text-lg font-semibold">8.2%</p>
+                    <p className="text-gray-300 text-sm">Current APY</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold">12 M</p>
+                    <p className="text-gray-300 text-sm">Total Yield</p>
+                  </div>
+                  <div>
+                    <p className="text-lg font-semibold">$5,234</p>
+                    <p className="text-gray-300 text-sm">Your Balance</p>
+                  </div>
               </div>
-              <div>
-                <p className="text-lg font-semibold">$12.5M</p>
-                <p className="text-gray-400 text-sm">TVL</p>
-              </div>
-              <div>
-                <p className="text-lg font-semibold">${balance?.toString()}</p>
-                <p className="text-gray-400 text-sm">Your Balance</p>
-              </div>
+          
             </div>
           </div>
-        </div>
 
       </div>
       
@@ -407,9 +434,7 @@ export default function VaultCard() {
               </button>
             </div>
         )
-        }
-      
-
+      }
     </div>
   );
 }

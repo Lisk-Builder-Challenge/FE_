@@ -14,28 +14,28 @@ const steps: Step[] = [
   {
     id: 1,
     title: "Deposit Stablecoin",
-    description: "Choose your preferred stablecoin vault",
+    description: "Choose a vault based on USDC, IDRX, or EUROC to start earning yield",
   },
   {
     id: 2,
-    title: "Operators Submit Strategies",
-    description: "Competitive yield strategies are proposed",
+    title: "Strategies Register & Operate",
+    description: "Strategy managers actively manage funds according to the restake support they receive",
   },
   {
     id: 3,
     title: "Restakers Underwrite",
-    description: "Selected strategies are secured by ETH",
+    description: "Restaker provide support with ETH as collateral-ensuring strategy accountability",
   },
   {
     id: 4,
-    title: "Funds Allocated",
-    description: "Vault allocates user funds based on the selected strategy",
+    title: "Continuous Allocation",
+    description: "Funds are allocated proportionally to active startegies, with no need for freezing or monthly rotation",
   },
   {
     id: 5,
-    title: "Yield Accrual & Rebalancing",
+    title: "Periodic Evaluation & Slashing",
     description:
-      "Yield is accrued and Capital is rebalanced into the new winning strategy or You can withdraw",
+      "Each epoc, strategy performance is evaluated. Poor-performing managers are slashed, and funds are auto-reallocated",
   },
 ];
 

@@ -9,13 +9,13 @@ const HeroSection = () => {
     <section className="min-h-screen flex items-center justify-between bg-black text-white px-35 py-10 relative overflow-hidden">
       <div className="max-w-3xl z-10">
         <h1 className="text-4xl md:text-5xl lg:text-4.5xl leading-tight mb-10">
-          Decentralized Yield-Bearing <br />
-          Stablecoins Powered by <br />
-          Strategy Auctions
+          Always-On Yield <br />
+          Dynamically Managed <br />
+          Powered by Rolling Epochs
         </h1>
         <p className="text-gray-400 text-lg mb-10">
-          Earn yield on USDC, IDRX, or EUROC through <br />
-          permissionless, competitive manager strategies.
+          Earn yield on USDC, IDRX, or EUROC with live, evolving strategies — no idle capital, no monthly freeze.<br />
+          Strategy managers operate continuously with transparent, periodic evaluations.
         </p>
         <div className="flex gap-4">
           <Button

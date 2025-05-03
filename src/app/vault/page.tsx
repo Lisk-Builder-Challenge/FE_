@@ -9,7 +9,7 @@ const page = () => {
     return (
       <div>
         <Navbar/>
-       <Vault1/>
+      <Vault1/>
        <Vault3/>
        <Vault4/>
       </div>

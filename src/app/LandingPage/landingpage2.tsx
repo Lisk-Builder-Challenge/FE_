@@ -25,10 +25,10 @@ export default function Home() {
         {[
           "Decentralized, Not Custodial",
           "Restaking-Backed Safety",
-          "Multi-Asset Vaults",
-          "Automated Yield Allocation",
-          "Open Participation",
-          "Transparent Strategy Auction",
+          "Multi-Strategy Vaults",
+          "Always-On Yield",
+          "Rolling Epoch Evaluations",
+          "Permissionless Strategy Evolution",
         ].map((item) => (
           <span
             key={item}
@@ -41,27 +41,21 @@ export default function Home() {
 
       <div className="max-w-2xl text-center text-white/70 space-y-6">
         <p>
-          Most stablecoin platforms are passive. They chase safe returns, lock your capital, and offer
-          little visibility into how your money is used. Meanwhile, yield is often controlled by a few insiders or opaque
-          funds. We believe that yield should be open, competitive, and transparent.
+          Most stablecoin platforms are passive. They freeze capital, rely on monthly rotations, and offer limited insight into what’s driving your returns. We believe yield should flow continuously — open, competitive, and accountable.
+
         </p>
 
         <p className="font-medium text-white">
-          Our platform introduces a new model:<br />
-          Strategists compete. Restakers underwrite. Users stay in control.
+          yielDrift introduces a new model: Strategists operate non-stop. <br />
+          Restakers back them. Users remain in full control.
         </p>
 
         <p>
-          Through monthly auctions, yield strategies are selected based on merit—not connections. Operators pitch how
-          they’ll allocate your capital across top protocols. The winning strategy earns your trust—and your vault.
-          Backed by restakers using LRTs, capital is protected by a decentralized network, not a single party. And because
-          we support multi-stablecoin vaults, you can grow your wealth in USDC++, EUROC++, or IDRX++, while staying
-          within your preferred currency.
+          With rolling epochs, strategies stay active — no restarts, no downtime. Performance is evaluated rutin, and poor managers are slashed, protecting the vault and rewarding users. Restakers back strategists and can move support anytime, creating a dynamic, merit-based system. Users earn from a live, evolving set of strategies — backed by decentralized trust, not centralized control. With support for stablecoins like USDC++, IDRX++, and EUROC++, yield flows continuously in your preferred currency.
         </p>
 
         <p className="font-medium text-white/90">
-          This is yield, rebuilt for Web3—where users earn, strategists compete, and value flows back to the people who
-          power the protocol.
+          This is DeFi yield — always on, performance-driven, and built for the future.
         </p>
 
         <p className="font-semibold text-white/90 text-lg">
