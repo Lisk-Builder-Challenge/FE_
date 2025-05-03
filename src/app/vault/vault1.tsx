@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+import React, { useEffect } from "react";
 import { Inter } from 'next/font/google';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {useWriteContract, useWaitForTransactionReceipt} from "wagmi";
@@ -110,9 +110,8 @@ export default function VaultCard() {
               {isLoading ? "sedang loading" : "tidak loading"}
               <br/>
               {isError ? "sedang error" : "tidak error"}
-              <br/>
-              {isSuccess ? "success" : "tidak success"}
-              */}
+              <br/>*/}
+              {/* //{isSuccess ? "success" : "tidak success"} */}
             </p>
           </div>
           <div className="flex items-center gap-3 mt-6">
@@ -159,6 +158,7 @@ export default function VaultCard() {
           </div>
           </div>
         </div>
+      
 
         {/* Kanan - hanya statistik, tanpa shape */}
         <div className="flex flex-col justify-end items-end flex-1">
