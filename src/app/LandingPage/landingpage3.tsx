@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 type Feature = {
   title: string;
@@ -46,7 +47,7 @@ export default function Features() {
 
             {/* Content */}
             <div className="relative z-20 flex flex-col h-full">
-              <img src={feature.iconSrc} alt={feature.title} className="w-10 h-10 mb-4" />
+              <Image src={feature.iconSrc} alt={feature.title} className="w-10 h-10 mb-4" width={40} height={140}/>
               <h3 className="text-white font-semibold text-xl mb-5">{feature.title}</h3>
               <p className="text-sm text-gray hover:text-blue leading-relaxed">{feature.description}</p>
             </div>

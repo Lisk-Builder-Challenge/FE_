@@ -3,12 +3,12 @@
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
+  //DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/app/animasi/dialog";
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+//import { ChevronDown } from "lucide-react";
+//import { useState } from "react";
 import { EllipsisVertical } from 'lucide-react';
 import Dropdown from "@/app/animasi/dropdown";
 import DropdownGroup from "@/app/animasi/dropdownGroup";
@@ -40,8 +40,8 @@ export function StrategyDetails({
   platforms,
   assetDetails,
 }: StrategyDetailsProps) {
-  const [showPlatformDetails, setShowPlatformDetails] = useState(false);
-  const [showAssetDetails, setShowAssetDetails] = useState(false);
+  //const [showPlatformDetails, setShowPlatformDetails] = useState(false);
+  //const [showAssetDetails, setShowAssetDetails] = useState(false);
 
   return (
     <Dialog>

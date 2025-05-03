@@ -7,11 +7,11 @@ import '@rainbow-me/rainbowkit/styles.css';
 import {
   getDefaultConfig,
   RainbowKitProvider,
-  Chain,
+  //Chain,
 } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
 import {
-  monadTestnet,
+  //monadTestnet,
 } from 'wagmi/chains';
 import {
   QueryClientProvider,

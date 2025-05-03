@@ -24,8 +24,8 @@ const data = [
 ];
 
 export default function YieldHistory() {
-  const [timeframe, setTimeframe] = useState('Weekly');
-  const [userFilter, setUserFilter] = useState('All Users');
+  const [timeframe] = useState('Weekly');
+  const [userFilter] = useState('All Users');
   
   return (
     <div className="mb-8">

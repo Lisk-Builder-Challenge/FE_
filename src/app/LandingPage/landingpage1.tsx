@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/app/animasi/button";
 import { useRouter } from "next/navigation"; 
+import Image from "next/image";
 
 const HeroSection = () => {
   const router = useRouter();
