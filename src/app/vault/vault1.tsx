@@ -118,7 +118,7 @@ export default function VaultCard() {
       return;
     }
 
-    const parsedAmount = BigInt(Number(usdcAmount) * 10 ** 18); // Assuming USDC has 6 decimals
+    const parsedAmount = BigInt(Number(usdcAmount) * 10 ** 18); 
 
 
     writeContract({
