@@ -11,6 +11,23 @@ import vaultAbi from "@/app/abi/VaultABI.json"
 import { useState } from "react";
 import Head from "next/head";
 
+import {
+  AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
+} from 'recharts';
+
+// UNTUK CHART
+const data = [
+  { name: 'Mon', uv: 4, pv: 5 },
+  { name: 'Tue', uv: 4.2, pv: 5.5 },
+  { name: 'Wed', uv: 5, pv: 6.5 },
+  { name: 'Thu', uv: 4.8, pv: 5.2 },
+  { name: 'Fri', uv: 3.9, pv: 4.1 },
+  { name: 'Sat', uv: 3.5, pv: 6 },
+  { name: 'Sun', uv: 2.5, pv: 8 },
+];
+
+
+
 const inter = Inter({ subsets: ['latin'] });
 
 const sharedBoxStyle = {
@@ -286,91 +303,150 @@ export default function VaultCard() {
       </div>
       
       {isDeposit ? (
-          <div
-          className={`${inter.className} w-[1241px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
-          style={{
-            ...sharedBoxStyle,
-            boxShadow: '0px 30px 60px 0px rgba(0, 0, 0, 0.10)',
-          }}
-        >
-          <h2 className="text-2xl font-semibold mb-4">Deposit</h2>
-    
-          <div className="flex gap-6 mb-6">
-            {/* Input Section */}
-            <div className="flex flex-col gap-3 w-1/2">
-              {/* USDC Input */}
-              <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium">USDC</p>
-                  <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
-                  
-                </div>
-                <input
-                  inputMode="decimal"
-                  className="bg-transparent text-right text-lg font-semibold focus:outline-none w-60"
-                  placeholder="0.00"
-                  value={usdcAmount}
-                  onChange={(e) => setUsdcAmount(e.target.value)}
-                />
-              </div>
-    
-              {/* USD++ Output */}
-              <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium">USD++</p>
-                  <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
-                </div>
-                <p className="text-lg font-semibold"
-                >{usdcAmount ? usdcAmount : "0.00"}</p>
-              </div>
-            </div>
-    
-            {/* Preview Section */}
+
+        <div className="flex flex-row gap-6 justify-center items-center">
+
+        
             <div
-              className="w-1/2 px-4 py-3 rounded-lg space-y-3"
-              style={{
-                ...sharedBoxStyle,
-                borderRadius: '12px',
-                padding: '16px',
-              }}
-            >
-              <h3 className="font-semibold text-white text-base">Transaction Preview</h3>
-              <div className="flex justify-between text-sm text-gray-300">
-                <span>Estimated APY</span>
-                <span className="text-white font-medium">8.2%</span>
-              </div>
-              <div className="flex justify-between text-sm text-gray-300">
-                <span>Network Fee</span>
-                <span className="text-white font-medium">-$2.50</span>
-              </div>
-              <div className="flex justify-between text-sm text-gray-300">
-                <span>Min. Deposit</span>
-                <span className="text-white font-medium">$100</span>
-              </div>
-            </div>
-          </div>
-    
-          {/* Confirm Button */}
-          <button
-            className="w-full py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
-            //onClick={() => alert(`Deposit amount: ${usdcAmount} USDC`)}
-            onClick={handleApproval}
+            className={`${inter.className} w-[610px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
             style={{
-              backgroundImage: `
-                radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 80%),
-                linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)
-              `,
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(255,255,255,0.1)',
+                ...sharedBoxStyle,
+                boxShadow: '0px 30px 60px 0px rgba(0, 0, 0, 0.10)',
             }}
-          >
-            Confirm Deposit
-          </button>
+            >
+            <h2 className="text-2xl font-semibold mb-4">Deposit</h2>
+        
+            <div className="flex gap-6 mb-6">
+                {/* Input Section */}
+                <div className="flex flex-col gap-3 w-full">
+                {/* USDC Input */}
+                <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
+                    <div>
+                    <p className="text-sm font-medium">USDC</p>
+                    <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
+                    
+                    </div>
+                    <input
+                    inputMode="decimal"
+                    className="bg-transparent text-right text-lg font-semibold focus:outline-none w-60"
+                    placeholder="0.00"
+                    value={usdcAmount}
+                    onChange={(e) => setUsdcAmount(e.target.value)}
+                    />
+                </div>
+        
+                {/* USD++ Output */}
+                <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
+                    <div>
+                    <p className="text-sm font-medium">USD++</p>
+                    <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
+                    </div>
+                    <p className="text-lg font-semibold"
+                    >{usdcAmount ? usdcAmount : "0.00"}</p>
+                </div>
+                </div>
+        
+                {/* Preview Section */}
+                
+            </div>
+            
+            <div className="flex justify-center items-center gap-4 mt-1 my-4">
+                    <div className="text-start justify-start text-Foreground-Primary text-base font-normal font-['Inter'] leading-normal">Approve Token</div>
+                    <div className="text-center justify-start text-Foreground-Secondary/70 text-base font-normal font-['Inter'] leading-normal">-------</div>
+                    <div className="text-center justify-start text-Foreground-Secondary/70 text-base font-normal font-['Inter'] leading-normal">Confirm Token</div>
+                </div>
+        
+            {/* Confirm Button */}
+            <button
+                className="w-[570px] py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
+                //onClick={() => alert(`Deposit amount: ${usdcAmount} USDC`)}
+                onClick={handleApproval}
+                style={{
+                backgroundImage: `
+                    radial-gradient(circle at center, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 80%),
+                    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%)
+                `,
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                }}
+            >
+                Confirm Deposit
+            </button>
+            </div>
+            
+
+            <div className={`${inter.className} w-[610px] mx-auto mt-10 text-white`}>
+            
+                  {/* Shape 1 */}
+                  <div
+                    className="rounded-[40px] p-2 pt-4 relative"
+                    style={{
+                      ...sharedBoxStyle,
+                      boxShadow: '0px 30px 60px rgba(0, 0, 0, 0.1)',
+                    }}
+                  >
+                    <div className="flex justify-start ml-3 items-center mb-4">
+                        <h2 className="text-2xl font-semibold">Yield History</h2>
+                        
+                    </div>
+                    
+                    {/* Shape 2 */}
+                    <div
+                      className="rounded-[30px] px-4 py-3"
+                      style={{
+                        ...sharedBoxStyle,
+                        position: 'relative',
+                        zIndex: 1,
+                      }}
+                    >
+                      <div className="text-center text-white font-medium mb-2">
+                        Lesson Hour Tracking <span className="text-md">↝</span>
+                      </div>
+                      <ResponsiveContainer width="100%" height={223}>
+                        <AreaChart data={data} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+                          <defs>
+                            <linearGradient id="gradientFill" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#ffffff" stopOpacity={0.3} />
+                              <stop offset="100%" stopColor="#000000" stopOpacity={0} />
+                            </linearGradient>
+                          </defs>
+                          <XAxis dataKey="name" tick={{ fill: '#ccc', fontSize: 13 }} />
+                          <YAxis tick={{ fill: '#ccc', fontSize: 13 }} domain={[2, 8]} ticks={[2, 4, 6, 8]} />
+                          <Tooltip
+                            contentStyle={{ backgroundColor: '#1c1b33', border: 'none', color: 'white' }}
+                            labelStyle={{ color: '#fff' }}
+                          />
+                          <Area
+                            type="monotone"
+                            dataKey="pv"
+                            stroke="#ffffff"
+                            strokeWidth={2}
+                            fill="url(#gradientFill)"
+                          />
+                          <Area
+                            type="monotone"
+                            dataKey="uv"
+                            stroke="#ffffff"
+                            strokeOpacity={0.6}
+                            strokeWidth={1}
+                            fill="transparent"
+                          />
+                        </AreaChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                </div>
+            
+        
         </div>
         
         ):(
+        <div className="flex flex-row gap-6 justify-center items-center">
+
+            
+
           <div
-              className={`${inter.className} w-[1241px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
+              className={`${inter.className} w-[610px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
               style={{
                 ...sharedBoxStyle,
                 boxShadow: '0px 30px 60px 0px rgba(0, 0, 0, 0.10)',
@@ -380,7 +456,7 @@ export default function VaultCard() {
 
               <div className="flex gap-6 mb-6">
                 {/* Input Section */}
-                <div className="flex flex-col gap-3 w-1/2">
+                <div className="flex flex-col gap-3 w-full">
                   {/* USDC Input */}
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
@@ -405,35 +481,15 @@ export default function VaultCard() {
                     <p className="text-lg font-semibold">0.00</p>
                   </div>
                 </div>
-
-                {/* Preview Section */}
-                <div
-                  className="w-1/2 px-4 py-3 rounded-lg space-y-3"
-                  style={{
-                    ...sharedBoxStyle,
-                    borderRadius: '12px',
-                    padding: '16px',
-                  }}
-                >
-                  <h3 className="font-semibold text-white text-base">Transaction Preview</h3>
-                  <div className="flex justify-between text-sm text-gray-300">
-                    <span>Estimated APY</span>
-                    <span className="text-white font-medium">8.2%</span>
-                  </div>
-                  <div className="flex justify-between text-sm text-gray-300">
-                    <span>Network Fee</span>
-                    <span className="text-white font-medium">-$2.50</span>
-                  </div>
-                  <div className="flex justify-between text-sm text-gray-300">
-                    <span>Min. Deposit</span>
-                    <span className="text-white font-medium">$100</span>
-                  </div>
-                </div>
               </div>
+
+              <div className="flex justify-center items-center gap-4 mt-1 my-4">
+                    
+                </div>
 
               {/* Confirm Button */}
               <button
-                className="w-full py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
+                className="w-[570px] py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
                 //onClick={() => alert(`Deposit amount: ${usdcAmount} USDC`)}
                 onClick={handleWithdraw}
                 style={{
@@ -448,12 +504,85 @@ export default function VaultCard() {
                 Confirm Wihtdraw
               </button>
             </div>
+
+
+
+            <div className={`${inter.className} w-[610px] mx-auto mt-10 text-white`}>
+            
+                  {/* Shape 1 */}
+                  <div
+                    className="rounded-[40px] p-2 pt-4 relative"
+                    style={{
+                      ...sharedBoxStyle,
+                      boxShadow: '0px 30px 60px rgba(0, 0, 0, 0.1)',
+                    }}
+                  >
+                    <div className="flex justify-start ml-3 items-center mb-4">
+                        <h2 className="text-2xl font-semibold">Yield History</h2>
+                        
+                    </div>
+                    
+                    {/* Shape 2 */}
+                    <div
+                      className="rounded-[30px] px-4 py-3"
+                      style={{
+                        ...sharedBoxStyle,
+                        position: 'relative',
+                        zIndex: 1,
+                      }}
+                    >
+                      <div className="text-center text-white font-medium mb-2">
+                        Lesson Hour Tracking <span className="text-md">↝</span>
+                      </div>
+                      <ResponsiveContainer width="100%" height={195}>
+                        <AreaChart data={data} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+                          <defs>
+                            <linearGradient id="gradientFill" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#ffffff" stopOpacity={0.3} />
+                              <stop offset="100%" stopColor="#000000" stopOpacity={0} />
+                            </linearGradient>
+                          </defs>
+                          <XAxis dataKey="name" tick={{ fill: '#ccc', fontSize: 13 }} />
+                          <YAxis tick={{ fill: '#ccc', fontSize: 13 }} domain={[2, 8]} ticks={[2, 4, 6, 8]} />
+                          <Tooltip
+                            contentStyle={{ backgroundColor: '#1c1b33', border: 'none', color: 'white' }}
+                            labelStyle={{ color: '#fff' }}
+                          />
+                          <Area
+                            type="monotone"
+                            dataKey="pv"
+                            stroke="#ffffff"
+                            strokeWidth={2}
+                            fill="url(#gradientFill)"
+                          />
+                          <Area
+                            type="monotone"
+                            dataKey="uv"
+                            stroke="#ffffff"
+                            strokeOpacity={0.6}
+                            strokeWidth={1}
+                            fill="transparent"
+                          />
+                        </AreaChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </div>
+                </div>
+            
+
+            </div>
+
         )
       }
+
+
+
+
+
     </div>
 
     
-
+      
     
   );
 

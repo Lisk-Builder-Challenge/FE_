@@ -12,7 +12,7 @@ export default function Home() {
       {/* Background Aura */}
       <div className="absolute inset-0 z-5 flex items-start justify-center">
         <div className="relative w-full h-full -translate-y-30">
-                <Image
+        <Image
           src="/svgLP1/Ellipse.svg"
           alt="Background Aura"
           layout="fill"

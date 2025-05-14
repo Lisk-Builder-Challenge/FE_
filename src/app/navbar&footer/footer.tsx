@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Import 
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12"> {/* Increased padding to make footer taller */}
+    <footer className="bg-black text-white mt-10 py-5 border-t border-gray-800"> {/* Increased padding to make footer taller */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 -mb-5">
         <div className="flex justify-between items-start border-b-2 border-gray-500 pb-8 mt-8 -mb-29"> {/* Updated border to gray */}
           {/* Logo Section */}

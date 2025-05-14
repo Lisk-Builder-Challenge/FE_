@@ -4,9 +4,9 @@ import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Import 
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12"> {/* Increased padding to make footer taller */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 -mb-5">
-        <div className="flex justify-between items-start border-b-2 border-gray-500 pb-8 mt-8 -mb-29"> {/* Updated border to gray */}
+    <footer className="bg-black text-white py-12 "> {/* Increased padding to make footer taller */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 -mb-0">
+        <div className="flex justify-between items-start border-b-2 border-gray-500 pb-8 mt-8 -mb-0"> {/* Updated border to gray */}
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Image
@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Navigation Sections */}
           <div className="flex space-x-12">
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold">Productst</h4>
+              <h4 className="text-sm font-semibold">Productst0</h4>
               <ul className="space-y-2 text-sm text-gray-500">
                 <li><a href="#" className="hover:text-gray-400">Vaults</a></li>
                 <li><a href="#" className="hover:text-gray-400">Docs</a></li>
