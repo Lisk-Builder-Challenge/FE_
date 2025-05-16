@@ -1,46 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YieldDrift: Redefining Stable Yield Through AVS-Driven Capital Allocation
 
-## Getting Started
+📌 **Introduction**  
+YieldDrift is a stablecoin-backed platform designed to optimize capital productivity for users. By enabling users to deposit stable assets, YieldDrift leverages an AVS (Automated Vault Selector) system to allocate funds to vetted investment managers. These managers generate returns through diverse strategies, while users retain the ability to withdraw their funds at any time.
 
-First, run the development server:
+With a seamless experience and trustless architecture, YieldDrift bridges the gap between traditional fund management and decentralized finance.
+
+---
+
+🏗 **Project Structure**  
+YieldDrift comprises several integral components:
+
+- 📝 **Smart Contracts**: Manage deposits, withdrawals, yield tracking, and investment allocation logic.
+- 💻 **Frontend Application**: Intuitive interface for users to deposit, track earnings, and withdraw funds.
+- ⚙️ **AVS System**: Automatically selects and routes capital to optimal investment managers.
+- 🔗 **Blockchain Integration**: Ensures transparency and on-chain traceability of user funds and yields.
+
+---
+
+🌟 **Key Features**
+
+- 💸 **Stablecoin-Based Deposits**: Users deposit stable assets like USDC or DAI to earn yield.
+- 🧠 **AVS-Powered Capital Allocation**: Intelligent contract system selects top-performing investment managers dynamically.
+- 🔁 **Flexible Withdrawals**: Users can withdraw their capital plus earned yield based on fund liquidity.
+- 📊 **Yield Dashboard**: Real-time tracking of portfolio performance and manager distribution.
+- 🛡 **Decentralized and Auditable**: All transactions and fund flows are recorded on-chain for full transparency.
+
+---
+
+⚙️ **Setup and Installation**
+
+### 📌 Prerequisites
+
+- [Foundry](https://book.getfoundry.sh/) – for smart contract development
+- [Node.js](https://nodejs.org/) (Latest LTS version)
+- A supported Ethereum-compatible wallet (e.g., MetaMask)
+
+---
+
+### 📥 Installation
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-
-INSTAL TAMBAHAN JIKA ADA EROR DI IMPORT
-1. npm install class-variance-authority
-2. npm install react-icons
-3. npm install lucide-react
-4. pip install pillow
-5. npx shadcn-ui@latest add button
-6. npm install framer-motion
+git clone https://github.com/Lisk-Builder-Challenge/FE_.git
+cd FE_

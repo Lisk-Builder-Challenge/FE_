@@ -305,11 +305,11 @@ export default function VaultCard() {
       
       {isDeposit ? (
 
-        <div className="flex flex-row gap-6 justify-center items-center">
+        <div className="flex flex-row-reverse gap-6 justify-center items-center">
 
         
             <div
-            className={`${inter.className} w-[610px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
+            className={`${inter.className} w-[442px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
             style={{
                 ...sharedBoxStyle,
                 boxShadow: '0px 30px 60px 0px rgba(0, 0, 0, 0.10)',
@@ -359,7 +359,7 @@ export default function VaultCard() {
         
             {/* Confirm Button */}
             <button
-                className="w-[570px] py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
+                className="w-[402px] py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
                 //onClick={() => alert(`Deposit amount: ${usdcAmount} USDC`)}
                 onClick={handleApproval}
                 style={{
@@ -376,7 +376,7 @@ export default function VaultCard() {
             </div>
             
 
-            <div className={`${inter.className} w-[610px] mx-auto mt-10 text-white`}>
+            <div className={`${inter.className} w-[778px] mx-auto mt-10 text-white`}>
             
                   {/* Shape 1 */}
                   <div
@@ -442,7 +442,7 @@ export default function VaultCard() {
         </div>
         
         ):(
-        <div className="flex flex-row gap-6 justify-center items-center">
+        <div className="flex flex-row-reverse gap-6 justify-center items-center">
 
             
 
