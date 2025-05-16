@@ -4,7 +4,7 @@ import Landingpage2 from "@/app/LandingPage/revisiLP2"
 import Landingpage3 from "@/app/LandingPage/landingpage3"
 import Landingpage4 from "@/app/LandingPage/landingpage4"
 import Landingpage5 from "@/app/LandingPage/landingpage5"
-import Navbar from "@/app/navbar&footer/navbarDashboard"
+import Navbar from "@/app/navbar&footer/header"
 
 const page = () => {
   return (

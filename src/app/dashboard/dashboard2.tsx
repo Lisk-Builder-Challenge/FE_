@@ -10,9 +10,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Portofolio() {
   const vaults = [
-    { name: 'USD++', balance: '$50,000', icon: '/Video.svg' },
+    { name: 'USD++', balance: '$-', icon: '/Video.svg' },
     { name: 'IDRX++', balance: '$50,000', icon: '/Video.svg' },
-    { name: 'EUROC++', balance: '$50,000', icon: '/Video.svg' },
+    { name: 'EUROC++', balance: '$-', icon: '/Video.svg' },
   ];
 
   const cardData = [

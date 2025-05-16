@@ -67,7 +67,7 @@ export default function ActionHistory() {
 
       {/* Header */}
       <div
-          className="grid grid-cols-5 text-md font-large text-gray-300 rounded-[20px] border border-gray-700 shadow-md space-y-5 "
+          className="grid grid-cols-5 text-base font-large text-gray-300 rounded-[20px] border border-gray-700 shadow-md space-y-5 justify-between "
           style={sharedBoxStyle}
         >
           <div className="text-center mt-3">ID</div>
@@ -90,7 +90,7 @@ export default function ActionHistory() {
         {historyData.map((item, index) => (
           <div
             key={index}
-            className="grid grid-cols-5 text-base items-center px-6 h-[100px] "
+            className="grid grid-cols-5 text-base items-center -px-2 h-[100px] "
           >
             <div className="text-center">{item.id}</div>
             <div className="text-center">{item.value}</div>
