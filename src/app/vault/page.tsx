@@ -5,7 +5,7 @@ import React from 'react'
  import Vault4 from "@/app/vault/vault4"
  //import Revisi2 from@/app/vault/copyrVault2t2"
  import Navbar from "@/app/navbar&footer/navbarDashboard"
- import CobaRevV2 from "@/app/vault/copyrVault2"
+ import CobaRevV2 from "@/app/vault/revisiVault2"
 
 
 const page = () => {
