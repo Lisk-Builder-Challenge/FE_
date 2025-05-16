@@ -180,7 +180,7 @@ export default function StrategyAuctionTable() {
   };
 
   return (
-    <div className={`${inter.className} w-full flex justify-center px-4 py-10`}>
+    <div className={`${inter.className} w-full flex justify-center -mt-60 px-4 py-10`}>
       <div className="w-full max-w-[1241px] space-y-5">
           {/* Animated Silhouette Title */}
           <h2 className="text-5xl font-bold text-center relative animated-gradient-text"
@@ -189,7 +189,7 @@ export default function StrategyAuctionTable() {
             paddingBottom: '0.25em',
             overflow: 'visible',
           }}>
-          Current Strategy Auction
+          Registered Operators
           </h2>
   
         {/* Header */}

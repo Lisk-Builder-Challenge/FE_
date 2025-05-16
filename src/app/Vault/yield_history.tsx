@@ -9,7 +9,7 @@ import {
   Tooltip, 
   ResponsiveContainer
 } from 'recharts';
-import { Button } from '@/app/Vault/UI/button';
+import { Button } from '@/app/vault/UI/button';
 import { ChevronDown } from 'lucide-react';
 
 // Sample data for the chart
