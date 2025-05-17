@@ -470,7 +470,7 @@ export default function VaultCard() {
             
 
           <div
-              className={`${inter.className} w-[610px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
+              className={`${inter.className} w-[442px] rounded-[40px] p-5 mx-auto mt-10 text-white`}
               style={{
                 ...sharedBoxStyle,
                 boxShadow: '0px 30px 60px 0px rgba(0, 0, 0, 0.10)',
@@ -485,7 +485,7 @@ export default function VaultCard() {
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
                       <p className="text-sm font-medium">USD++</p>
-                      <p className="text-sm text-gray-400">Balance: {balance?.toString()}</p>
+                      <p className="text-sm text-gray-400">Balance: {balance ? Number(balance) / 1e6 : 0}</p>
                     </div>
                     <input
                       inputMode="decimal"
@@ -500,7 +500,7 @@ export default function VaultCard() {
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
                       <p className="text-sm font-medium">USDC</p>
-                      <p className="text-sm text-gray-400">Balance: 0.00</p>
+                      <p className="text-sm text-gray-400">Balance: {balance ? Number(balance) / 1e6 : 0}</p>
                     </div>
                     <p className="text-lg font-semibold">0.00</p>
                   </div>
@@ -513,7 +513,7 @@ export default function VaultCard() {
 
               {/* Confirm Button */}
               <button
-                className="w-[570px] py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
+                className="w-[402px] py-3 rounded-xl text-sm font-medium text-white hover:bg-white hover:text-black"
                 //onClick={() => alert(`Deposit amount: ${usdcAmount} USDC`)}
                 onClick={handleWithdraw}
                 style={{
@@ -531,7 +531,7 @@ export default function VaultCard() {
 
 
 
-            <div className={`${inter.className} w-[610px] mx-auto mt-10 text-white`}>
+            <div className={`${inter.className} w-[778px] mx-auto mt-10 text-white`}>
             
                   {/* Shape 1 */}
                   <div

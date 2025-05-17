@@ -1,29 +1,29 @@
 'use client';
 import React from "react";
 import { Inter } from 'next/font/google';
-import { Card, CardContent } from "@/app/animasi/cardLanding4";
-import { Button } from "@/app/animasi/buttonLanding4";
-import Image from "next/image";
-import Link from "next/link";
+// import { Card, CardContent } from "@/app/animasi/cardLanding4";
+// import { Button } from "@/app/animasi/buttonLanding4";
+// import Image from "next/image";
+// import Link from "next/link";
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Portofolio() {
-  const vaults = [
-    { name: 'USD++', balance: '$-', icon: '/Video.svg' },
-    { name: 'IDRX++', balance: '$50,000', icon: '/Video.svg' },
-    { name: 'EUROC++', balance: '$-', icon: '/Video.svg' },
-  ];
+  // const vaults = [
+  //   { name: 'USD++', balance: '$-', icon: '/Video.svg' },
+  //   { name: 'IDRX++', balance: '$50,000', icon: '/Video.svg' },
+  //   { name: 'EUROC++', balance: '$-', icon: '/Video.svg' },
+  // ];
 
-  const cardData = [
-    { label: "Total Value Locked", value: "$124,532.00" },
-    { label: "Total Deposits", value: "$200,000.00" },
-    { label: "Total Withdrawals", value: "$75,468.00" },
-  ];
+  // const cardData = [
+  //   { label: "Total Value Locked", value: "$124,532.00" },
+  //   { label: "Total Deposits", value: "$200,000.00" },
+  //   { label: "Total Withdrawals", value: "$75,468.00" },
+  // ];
 
   return (
     <div className={`${inter.className} bg-black flex justify-center items-center px-4 py-10 mt-[-150]`}>
-      <div
+      {/* <div
         className="relative flex flex-col rounded-[40px] w-[1241px] p-5 shadow-lg border border-gray-700 text-white space-y-6"
         style={{
           backgroundImage: `
@@ -36,7 +36,7 @@ export default function Portofolio() {
       >
         <h2 className="text-2xl font-semibold">Your Portofolio</h2>
 
-        {/* Total Value Locked boxes */}
+       
         <div className="grid md:grid-cols-3 gap-4">
           {cardData.map((item, i) => (
             <div
@@ -49,7 +49,7 @@ export default function Portofolio() {
           ))}
         </div>
 
-        {/* Token List */}
+       
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-7xl drop-shadow-[0_0_5px_rgba(255,255,255,0.93)]">
           {vaults.map((vault) => (
             <Card
@@ -76,7 +76,7 @@ export default function Portofolio() {
                         <div className="justify-start text-Foreground-Primary text-2xl font-medium font-['Inter'] [text-shadow:_0px_0px_20px_rgb(255_255_255_/_0.50)]">$50,000</div>
                     </div>
 
-                    {/* Button Deposit dan Withdraw */}
+                    
                     <div className="inline-flex justify-start items-start gap-5">
                       <Link href="/vault">
                         <Button  variant="outline" className="px-4 py-2 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/60 flex justify-start items-center gap-3">
@@ -93,7 +93,7 @@ export default function Portofolio() {
           ))}
         </div>
 
-      </div>
+      </div> */}
     </div>
   );
 }
