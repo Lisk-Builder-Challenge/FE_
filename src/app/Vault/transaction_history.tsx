@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from '@/app/vault/UI/button';
+import { Button } from '@/app/Vault/UI/button';
 
 type Transaction = {
   id: string;
