@@ -2,10 +2,10 @@ import React from 'react'
 //import Vault1 from "@/app/vault/vault1"
  ///import Vault2 from "@/app/vault/vault2"
  //import Vault3 from "@/app/vault/vault3"
- import Vault4 from "@/app/vault/vault4"
+ import Vault4 from "@/app/Vault/vault4"
  //import Revisi2 from@/app/vault/copyrVault2t2"
  import Navbar from "@/app/navbar&footer/navbarDashboard"
- import CobaRevV2 from "@/app/vault/CopyrVault2"
+ import CobaRevV2 from "@/app/Vault/CopyrVault2"
 
 
 
