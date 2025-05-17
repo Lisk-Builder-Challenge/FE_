@@ -15,7 +15,7 @@ const HeroSection = () => {
           Powered by Rolling Epochs
         </h1>
         <p className="text-gray-400 text-lg mb-10">
-          Earn yield on USDC, IDRX, or EUROC with live, evolving strategies — no idle capital, no monthly freeze.<br />
+          Earn yield on IDRX with live, evolving strategies — no idle capital, no monthly freeze.<br />
           Strategy managers operate continuously with transparent, periodic evaluations.
         </p>
         <div className="flex gap-4">
