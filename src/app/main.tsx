@@ -12,6 +12,7 @@ import {
 import { WagmiProvider } from 'wagmi';
 import {
   //monadTestnet,
+  sepolia
 } from 'wagmi/chains';
 import {
   QueryClientProvider,
@@ -48,7 +49,7 @@ export { pharosDevnet };
 const config = getDefaultConfig({
   appName: 'My RainbowKit App',
   projectId: 'YOUR_PROJECT_ID',
-  chains: [ pharosDevnet],
+  chains: [ sepolia],
   ssr: true, // If your dApp uses server side rendering (SSR)
 });
 

@@ -2,18 +2,16 @@
 import React from "react";
 import { useEffect } from "react";
 import { Inter } from 'next/font/google';
-import {useWriteContract, useReadContract, useAccount, useWaitForTransactionReceipt} from "wagmi";
-import {erc20Abi, formatUnits} from "viem";
-import { useState } from "react";
-import Head from "next/head";
-//import { MockUSDCAbi, Mock_Address } from "@/app/abi/MockUSDC";
-import { VaultABI, Vault_Address } from "@/app/abi/Vault";
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
+import {useWriteContract, useReadContract, useAccount, useWaitForTransactionReceipt} from "wagmi";
 //import { useWaithForTransaction } from "wagmi";
 //import { address } from "framer-motion/client";
+import {erc20Abi} from "viem";
 //import vaultAbi from "@/app/abi/VaultABI.json"
 //import vaultAbi from '@/app/abi/VaultABI.json' assert { type: 'json' };
-//import vaultAbi from '@/app/abi/abi1.json' assert { type: 'json' };  // ini abi terakhir dipakai sebelum pake yang abi ts
+import vaultAbi from '@/app/abi/abi1.json' assert { type: 'json' };
+import { useState } from "react";
+import Head from "next/head";
 
 import {
   AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
@@ -21,7 +19,7 @@ import {
 
 
 //UNTUK BALANCEOF
-//const VAULT_ADDRESS = "0x031fad29699d6fDeC5353b9C58c81313E1B15a06"; //tidak dipakai karena sudah pakai address yang baru 
+const VAULT_ADDRESS = "0x031fad29699d6fDeC5353b9C58c81313E1B15a06";
 
 // UNTUK CHART
 const data = [
@@ -68,11 +66,11 @@ export default function VaultCard() {
       return;
     }
 
-    const parsedAmount = BigInt(amount * 10 ** 18);
+    const parsedAmount = BigInt(amount * 10 ** 6);
     setActionType('approval');
     alert(`Requesting approval for ${usdcAmount} USDC...`);
     writeContract({
-      address : "0x123d93fc5188c561A89B52F2A429D026B696c2c2", abi: erc20Abi, functionName: "approve", args: [ Vault_Address, parsedAmount]
+      address : "0x123d93fc5188c561A89B52F2A429D026B696c2c2", abi: erc20Abi, functionName: "approve", args: [ "0x031fad29699d6fDeC5353b9C58c81313E1B15a06", parsedAmount]
     });
     alert(`Approval successful! You can now deposit ${usdcAmount} USDC.`);
   }
@@ -165,7 +163,7 @@ export default function VaultCard() {
     const parsedAmount = BigInt(Number(usdcAmount) * 10 ** 18); 
     
     writeContract({
-      abi: VaultABI, address: Vault_Address, functionName: "deposit", args: [parsedAmount]
+      abi: vaultAbi, address: "0x031fad29699d6fDeC5353b9C58c81313E1B15a06", functionName: "deposit", args: [parsedAmount]
     })
   }
 
@@ -184,36 +182,19 @@ export default function VaultCard() {
     const parsedAmount = BigInt(Number(usdcAmount) * 10 ** 18);
 
     writeContract({
-      abi: VaultABI, address: Vault_Address, functionName: "withdraw", args: [parsedAmount]
+      abi: vaultAbi, address: "0x031fad29699d6fDeC5353b9C58c81313E1B15a06", functionName: "withdraw", args: [parsedAmount]
     })
   }
 
 
   //FUNGIS UNTUK MEMANGGIL BALANCEOF DI SC
-    const {address: userAddress, isConnected } = useAccount();
+    const {address: userAddress } = useAccount();
     const {data: balance} = useReadContract({
-      address: Vault_Address,
-      abi: VaultABI,
-      functionName: "balanceOf",
-      args : [userAddress as `0x${string}`],
+      address: VAULT_ADDRESS,
+      abi: vaultAbi,
+      functionName: "balanceOfUnderlaying",
+      args : [userAddress],
     });
-
-
-    const BalanceUser = () => {
-    if (!isConnected) {
-      return <h1>Please connect your account!</h1>;
-    }
-
-    if (isLoading) {
-      return <p>Loading....</p>;
-    }
-
-    const formattedBalance = Number(formatUnits(balance || BigInt(0), 18)).toFixed(2);
-
-    return (
-      formattedBalance
-    );
-  };
   
   
 
@@ -328,9 +309,8 @@ export default function VaultCard() {
                     <p className="text-gray-300 text-sm">Total Yield</p>
                   </div>
                   <div>
-                    <BalanceUser/>
+                    <p className="text-lg font-semibold">$5,234</p>
                     <p className="text-gray-300 text-sm">Your Balance</p>
-                    
                   </div>
               </div>
           
@@ -360,7 +340,7 @@ export default function VaultCard() {
                 <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
                     <p className="text-sm font-medium">IDRX</p>
-                    <p className="text-sm text-gray-400">Balance: {balance ? Number(formatUnits(balance || BigInt(0), 18)).toFixed(2) : 0}</p>
+                    <p className="text-sm text-gray-400">Balance: {balance ? Number(balance) / 1e6 : 0}</p>
                     
                     </div>
                     <input
@@ -376,7 +356,7 @@ export default function VaultCard() {
                 <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
                     <p className="text-sm font-medium">IDRX++</p>
-                    <p className="text-sm text-gray-400">Balance: {balance ? Number(formatUnits(balance || BigInt(0), 18)).toFixed(2) : 0}</p>
+                    <p className="text-sm text-gray-400">Balance: {balance ? Number(balance) / 1e6 : 0}</p>
                     </div>
                     <p className="text-lg font-semibold"
                     >{usdcAmount ? usdcAmount : "0.00"}</p>
@@ -388,9 +368,9 @@ export default function VaultCard() {
             </div>
             
             <div className="flex justify-center items-center gap-4 mt-1 my-4">
-                    <div className={`text-start justify-start  text-base font-normal font-['Inter'] leading-normal ${isApproval ? 'text-gray-400' : 'text-white'}`}>Approve Token</div>
+                    <div className="text-start justify-start text-Foreground-Primary text-base font-normal font-['Inter'] leading-normal">Approve Token</div>
                     <div className="text-center justify-start text-Foreground-Secondary/70 text-base font-normal font-['Inter'] leading-normal">-------</div>
-                    <div className={`text-center justify-start text-Foreground-Secondary/70 text-base font-normal font-['Inter'] leading-normal ${isApproval ? 'text-white' : 'text-gray-400'}`}>Confirm Token</div>
+                    <div className="text-center justify-start text-Foreground-Secondary/70 text-base font-normal font-['Inter'] leading-normal">Confirm Token</div>
                 </div>
         
             {/* Confirm Button */}
@@ -520,7 +500,7 @@ export default function VaultCard() {
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
                       <p className="text-sm font-medium">USDC</p>
-                      <p className="text-sm text-gray-400">Balance: {balance ? Number(formatUnits(balance || BigInt(0), 16)).toFixed(2) : 0}</p>
+                      <p className="text-sm text-gray-400">Balance: {balance ? Number(balance) / 1e6 : 0}</p>
                     </div>
                     <p className="text-lg font-semibold">0.00</p>
                   </div>
