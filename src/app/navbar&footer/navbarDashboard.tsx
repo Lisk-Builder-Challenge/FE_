@@ -32,7 +32,7 @@ const Header = () => {
               HomePage
             </a>
             <a href="dashboard" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
-              dashboard
+              Dashboard
             </a>
             <a href="Vault" className="text-white hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">
               vault

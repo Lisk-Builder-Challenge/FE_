@@ -484,7 +484,7 @@ export default function VaultCard() {
                   {/* USDC Input */}
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium">USD++</p>
+                      <p className="text-sm font-medium">IDRX++</p>
                       <p className="text-sm text-gray-400">Balance: {balance ? Number(balance) / 1e6 : 0}</p>
                     </div>
                     <input
@@ -499,7 +499,7 @@ export default function VaultCard() {
                   {/* USD++ Output */}
                   <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium">USDC</p>
+                      <p className="text-sm font-medium">IDRX</p>
                       <p className="text-sm text-gray-400">Balance: {balance ? Number(balance) / 1e6 : 0}</p>
                     </div>
                     <p className="text-lg font-semibold">0.00</p>
