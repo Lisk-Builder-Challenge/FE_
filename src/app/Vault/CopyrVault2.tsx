@@ -208,7 +208,7 @@ export default function VaultCard() {
       return <p>Loading....</p>;
     }
 
-    const formattedBalance = Number(formatUnits(balance || BigInt(0), 18)).toFixed(2);
+    const formattedBalance = Number(formatUnits(balance || BigInt(0), 18)).toFixed(5);
 
     return (
       formattedBalance
@@ -360,7 +360,7 @@ export default function VaultCard() {
                 <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
                     <p className="text-sm font-medium">IDRX</p>
-                    <p className="text-sm text-gray-400">Balance: {balance ? Number(formatUnits(balance || BigInt(0), 18)).toFixed(2) : 0}</p>
+                    <p className="text-sm text-gray-400">Balance: {balance ? Number(formatUnits(balance || BigInt(0), 18)).toFixed(5) : 0}</p>
                     
                     </div>
                     <input
@@ -376,7 +376,7 @@ export default function VaultCard() {
                 <div className="bg-black/10 border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between">
                     <div>
                     <p className="text-sm font-medium">IDRX++</p>
-                    <p className="text-sm text-gray-400">Balance: {balance ? Number(formatUnits(balance || BigInt(0), 18)).toFixed(2) : 0}</p>
+                    <p className="text-sm text-gray-400">Balance: {balance ? Number(formatUnits(balance || BigInt(0), 18)).toFixed(5) : 0}</p>
                     </div>
                     <p className="text-lg font-semibold"
                     >{usdcAmount ? usdcAmount : "0.00"}</p>

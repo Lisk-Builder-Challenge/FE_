@@ -8,8 +8,6 @@ import React from 'react'
  import Navbar from "@/app/navbar&footer/navbarDashboard"
  import CobaRevV2 from "@/app/Vault/CopyrVault2"
 
-
-
 const page = () => {
     return (
       <div>
@@ -23,4 +21,4 @@ const page = () => {
     )
   }
   
-  export default page
+  export default page;
